@@ -1,7 +1,9 @@
 (()=>{
 const BUILD=window.PACKIT_BUILD;
 const music=new Audio(`assets/audio/music-cozy-jazz-v1.mp3?v=${BUILD}`);
+const conveyor=new Audio(`assets/audio/pack-it-conveyor-mechanical.mp3?v=${BUILD}`);
 music.loop=true;music.preload='auto';music.volume=.18;
+conveyor.preload='auto';conveyor.volume=1;
 let started=false,restoreTimer=0,audioCtx=null,chimeBus=null;
 function fadeMusic(target,duration=350){clearInterval(fadeMusic._t);const from=music.volume,start=performance.now();fadeMusic._t=setInterval(()=>{const t=Math.min(1,(performance.now()-start)/duration);music.volume=from+(target-from)*t;if(t>=1)clearInterval(fadeMusic._t)},25)}
 function getCtx(){if(!audioCtx){const C=window.AudioContext||window.webkitAudioContext;if(C)audioCtx=new C()}if(audioCtx?.state==='suspended')audioCtx.resume().catch(()=>{});return audioCtx}
@@ -9,9 +11,11 @@ function bell(ctx,bus,when,freq,gain=.055,dur=.8){const out=ctx.createGain();out
 function stopChime(){if(!audioCtx||!chimeBus)return;const t=audioCtx.currentTime;try{chimeBus.gain.cancelScheduledValues(t);chimeBus.gain.setValueAtTime(Math.max(.0001,chimeBus.gain.value),t);chimeBus.gain.exponentialRampToValueAtTime(.0001,t+.035)}catch(e){}chimeBus=null}
 function perfectChime(){const ctx=getCtx();if(!ctx)return;stopChime();const bus=ctx.createGain();bus.gain.value=1;bus.connect(ctx.destination);chimeBus=bus;const t=ctx.currentTime+.025;bell(ctx,bus,t,659.25,.042,.68);bell(ctx,bus,t+.13,783.99,.048,.78);bell(ctx,bus,t+.27,987.77,.055,.95);bell(ctx,bus,t+.43,1318.51,.032,.72);setTimeout(()=>{if(chimeBus===bus)chimeBus=null},1250)}
 function startAudio(){if(started)return;started=true;getCtx();music.play().catch(()=>{})}
+function playConveyor(){conveyor.pause();conveyor.currentTime=0;conveyor.play().catch(()=>{})}
 document.querySelector('#startGame')?.addEventListener('click',startAudio,{passive:true});
+document.querySelector('#next')?.addEventListener('pointerdown',playConveyor,{passive:true,capture:true});
 const wrap=document.querySelector('#boxwrap');if(!wrap)return;
 let wasClosed=wrap.classList.contains('closed');
 new MutationObserver(()=>{const isClosed=wrap.classList.contains('closed');if(isClosed&&!wasClosed){clearTimeout(restoreTimer);fadeMusic(.055,90);perfectChime();restoreTimer=setTimeout(()=>fadeMusic(.18,500),900)}wasClosed=isClosed}).observe(wrap,{attributes:true,attributeFilter:['class']});
-document.addEventListener('visibilitychange',()=>{if(document.hidden){music.pause();stopChime()}else if(started)music.play().catch(()=>{})});
+document.addEventListener('visibilitychange',()=>{if(document.hidden){music.pause();conveyor.pause();stopChime()}else if(started)music.play().catch(()=>{})});
 })();
