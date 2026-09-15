@@ -1,4 +1,6 @@
 (()=>{
+const VERSION='DEV 0.0.50';
+document.querySelectorAll('.version,.splash-version').forEach(e=>e.textContent=VERSION);
 const music=new Audio('assets/audio/music-cozy-jazz-v1.mp3?v=0050');
 const pack=new Audio('assets/audio/pack-it-short.mp3?v=0050');
 music.loop=true;music.preload='auto';music.volume=.18;pack.preload='auto';pack.volume=.95;
