@@ -10,12 +10,13 @@ function getCtx(){if(!audioCtx){const C=window.AudioContext||window.webkitAudioC
 function bell(ctx,bus,when,freq,gain=.055,dur=.8){const out=ctx.createGain();out.gain.setValueAtTime(.0001,when);out.gain.exponentialRampToValueAtTime(gain,when+.012);out.gain.exponentialRampToValueAtTime(.0001,when+dur);out.connect(bus);[[1,1],[2.01,.24],[3.98,.08]].forEach(([mul,level])=>{const o=ctx.createOscillator(),g=ctx.createGain();o.type='sine';o.frequency.setValueAtTime(freq*mul,when);g.gain.value=level;o.connect(g);g.connect(out);o.start(when);o.stop(when+dur+.03)})}
 function stopChime(){if(!audioCtx||!chimeBus)return;const t=audioCtx.currentTime;try{chimeBus.gain.cancelScheduledValues(t);chimeBus.gain.setValueAtTime(Math.max(.0001,chimeBus.gain.value),t);chimeBus.gain.exponentialRampToValueAtTime(.0001,t+.035)}catch(e){}chimeBus=null}
 function perfectChime(){const ctx=getCtx();if(!ctx)return;stopChime();const bus=ctx.createGain();bus.gain.value=1;bus.connect(ctx.destination);chimeBus=bus;const t=ctx.currentTime+.025;bell(ctx,bus,t,659.25,.042,.68);bell(ctx,bus,t+.13,783.99,.048,.78);bell(ctx,bus,t+.27,987.77,.055,.95);bell(ctx,bus,t+.43,1318.51,.032,.72);setTimeout(()=>{if(chimeBus===bus)chimeBus=null},1250)}
-function startAudio(){if(started)return;started=true;getCtx();music.play().catch(()=>{})}
-function playConveyor(){conveyor.pause();conveyor.currentTime=.5;conveyor.play().catch(()=>{})}
+function primeConveyor(){conveyor.load()}
+function startAudio(){if(started)return;started=true;getCtx();primeConveyor();music.play().catch(()=>{})}
+function playConveyor(){conveyor.pause();try{conveyor.currentTime=.5}catch(e){}const p=conveyor.play();if(p?.catch)p.catch(()=>{})}
 document.querySelector('#startGame')?.addEventListener('click',startAudio,{passive:true});
-document.querySelector('#next')?.addEventListener('pointerdown',playConveyor,{passive:true,capture:true});
+window.addEventListener('packit:conveyor-start',playConveyor);
 const wrap=document.querySelector('#boxwrap');if(!wrap)return;
 let wasClosed=wrap.classList.contains('closed');
 new MutationObserver(()=>{const isClosed=wrap.classList.contains('closed');if(isClosed&&!wasClosed){clearTimeout(restoreTimer);fadeMusic(.055,90);perfectChime();restoreTimer=setTimeout(()=>fadeMusic(.18,500),900)}wasClosed=isClosed}).observe(wrap,{attributes:true,attributeFilter:['class']});
-document.addEventListener('visibilitychange',()=>{if(document.hidden){music.pause();conveyor.pause();stopChime()}else if(started)music.play().catch(()=>{})});
+document.addEventListener('visibilitychange',()=>{if(document.hidden){music.pause();conveyor.pause();stopChime()}else if(started){primeConveyor();music.play().catch(()=>{})}});
 })();
