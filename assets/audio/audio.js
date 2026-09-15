@@ -1,7 +1,6 @@
 (()=>{
-const VERSION='DEV 0.0.63';
-document.querySelectorAll('.version,.splash-version').forEach(e=>e.textContent=VERSION);
-const music=new Audio('assets/audio/music-cozy-jazz-v1.mp3?v=0063');
+const BUILD=window.PACKIT_BUILD,VERSION=window.PACKIT_VERSION;
+const music=new Audio(`assets/audio/music-cozy-jazz-v1.mp3?v=${BUILD}`);
 music.loop=true;music.preload='auto';music.volume=.18;
 let started=false,restoreTimer=0,audioCtx=null,chimeBus=null;
 function fadeMusic(target,duration=350){clearInterval(fadeMusic._t);const from=music.volume,start=performance.now();fadeMusic._t=setInterval(()=>{const t=Math.min(1,(performance.now()-start)/duration);music.volume=from+(target-from)*t;if(t>=1)clearInterval(fadeMusic._t)},25)}
