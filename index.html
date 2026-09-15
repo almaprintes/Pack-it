@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" style="background:#111;visibility:hidden">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
@@ -7,7 +7,6 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <title>PACK IT!</title>
-<style id="boot-style">html,body{margin:0;background:#111}body{visibility:hidden}</style>
 </head>
 <body>
 <div id="splash" class="splash"><div class="splash-card"><div class="splash-box">📦</div><div class="splash-title">PACK IT!</div><div class="splash-tag">ORDENA · ENCAJA · ENVÍA</div><button id="startGame" class="splash-start">EMPEZAR</button></div><div class="splash-version"></div></div>
@@ -30,10 +29,9 @@
     await load('assets/js/game.js');
     await load('assets/js/cable-fit.js');
     await load('assets/audio/audio.js');
-    document.body.style.visibility='visible';
-    document.querySelector('#boot-style')?.remove();
+    document.documentElement.style.visibility='visible';
   }catch(e){
-    document.body.style.visibility='visible';
+    document.documentElement.style.visibility='visible';
     document.body.innerHTML='<p style="font:16px system-ui;padding:24px;color:white;background:#111;margin:0;min-height:100vh">No se pudo cargar PACK IT!. Recarga la página.</p>';
   }
 })();
