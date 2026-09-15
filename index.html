@@ -45,6 +45,7 @@ body.ready #splash,body.ready #boot~main{visibility:visible}
     await cssReady;
     await load('assets/js/game.js');
     await load('assets/js/cable-fit.js');
+    await load('assets/js/score.js');
     await load('assets/audio/audio.js');
     const wait=Math.max(0,850-(performance.now()-bootStart));
     await new Promise(ok=>setTimeout(ok,wait));
