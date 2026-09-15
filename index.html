@@ -11,52 +11,15 @@
 html,body{margin:0;min-height:100%;background:#111}
 body{overflow:hidden}
 #boot{position:fixed;z-index:999999;inset:0;display:flex;align-items:center;justify-content:center;background:#111;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;opacity:1;transition:opacity .18s ease}
-#boot.out{opacity:0;pointer-events:none}
-.boot-inner{text-align:center;transform:translateY(-2vh)}
-.boot-box{font-size:68px;line-height:1;filter:drop-shadow(0 10px 12px #0008);animation:bootDrop .72s cubic-bezier(.2,.8,.25,1) both}
-.boot-title{margin-top:16px;font-size:31px;line-height:1;font-weight:900;letter-spacing:.055em;animation:bootTitle .38s .32s ease both}
-.boot-dots{height:20px;margin-top:12px;font-size:20px;letter-spacing:7px;color:#fff9;animation:bootDots .8s .18s ease-in-out infinite alternate}
-#splash,#boot~main{visibility:hidden}
-body.ready #splash,body.ready #boot~main{visibility:visible}
-@keyframes bootDrop{0%{opacity:0;transform:translateY(-65px) scale(.78) rotate(-7deg)}55%{opacity:1;transform:translateY(8px) scale(1.06) rotate(2deg)}72%{transform:translateY(-5px) scale(.98) rotate(-1deg)}100%{transform:translateY(0) scale(1) rotate(0)}}
-@keyframes bootTitle{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-@keyframes bootDots{from{opacity:.28;transform:scale(.92)}to{opacity:1;transform:scale(1.08)}}
+#boot.out{opacity:0;pointer-events:none}.boot-inner{text-align:center;transform:translateY(-2vh)}.boot-box{font-size:68px;line-height:1;filter:drop-shadow(0 10px 12px #0008);animation:bootDrop .72s cubic-bezier(.2,.8,.25,1) both}.boot-title{margin-top:16px;font-size:31px;line-height:1;font-weight:900;letter-spacing:.055em;animation:bootTitle .38s .32s ease both}.boot-dots{height:20px;margin-top:12px;font-size:20px;letter-spacing:7px;color:#fff9;animation:bootDots .8s .18s ease-in-out infinite alternate}#splash,#boot~main{visibility:hidden}body.ready #splash,body.ready #boot~main{visibility:visible}@keyframes bootDrop{0%{opacity:0;transform:translateY(-65px) scale(.78) rotate(-7deg)}55%{opacity:1;transform:translateY(8px) scale(1.06) rotate(2deg)}72%{transform:translateY(-5px) scale(.98) rotate(-1deg)}100%{transform:translateY(0) scale(1) rotate(0)}}@keyframes bootTitle{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}@keyframes bootDots{from{opacity:.28;transform:scale(.92)}to{opacity:1;transform:scale(1.08)}}
 </style>
 </head>
 <body>
 <div id="boot" aria-hidden="true"><div class="boot-inner"><div class="boot-box">📦</div><div class="boot-title">PACK IT!</div><div class="boot-dots">•••</div></div></div>
 <div id="splash" class="splash"><div class="splash-card"><div class="splash-box">📦</div><div class="splash-title">PACK IT!</div><div class="splash-tag">ORDENA · ENCAJA · ENVÍA</div><button id="startGame" class="splash-start">EMPEZAR</button></div><div class="splash-version"></div></div>
-<main class="game"><header><span>PACK IT! 📦</span><span>Caja <b id="lv">1</b>/5</span></header><div id="conveyor" class="conveyor"><div class="belt"><div id="rollers" class="rollers"></div><div class="railmark"></div></div></div><div id="boxwrap" class="boxwrap"><img class="boxart" data-src="assets/boxes/box-open.webp" alt=""><div id="box" class="box"></div><img class="boxclosed" data-src="assets/boxes/box-closed.webp" alt=""><div class="packtape"><span>PACK IT! 📦 · PACK IT! 📦 · PACK IT! 📦 · PACK IT! 📦</span></div><div id="smoke" class="smoke"><i class="puff" style="--x:-105px;--y:-42px;--d:0s"></i><i class="puff" style="--x:-58px;--y:-90px;--d:.03s"></i><i class="puff" style="--x:8px;--y:-108px;--d:.05s"></i><i class="puff" style="--x:76px;--y:-78px;--d:.02s"></i><i class="puff" style="--x:112px;--y:-18px;--d:.06s"></i><i class="puff" style="--x:91px;--y:58px;--d:.04s"></i><i class="puff" style="--x:28px;--y:94px;--d:0s"></i><i class="puff" style="--x:-45px;--y:88px;--d:.05s"></i><i class="puff" style="--x:-103px;--y:42px;--d:.02s"></i><i class="puff" style="--x:0px;--y:0px;--d:0s"></i></div></div><div id="tray" class="tray"></div><div class="actions"><button id="rotate" class="rotate">↻ Girar</button><button id="prepare" class="prepare">Preparar</button></div><div class="hint">Arrastra desde abajo · toca una pieza colocada para retirarla</div><div id="win" class="win">✨ PERFECT PACK!</div><div id="result" class="result"><div id="resultStars" class="result-stars">★★★</div><div class="result-stats"><span>⏱ <b id="resultTime">0.0 s</b></span><span>↻ <b id="resultMoves">0</b> mov.</span></div><div id="resultScore" class="result-score">1000 pts</div></div><button id="next" class="next">Siguiente caja →</button><div class="version"></div></main>
+<main class="game"><header><span>PACK IT! 📦</span><span>Caja <b id="lv">1</b>/5</span></header><div id="conveyor" class="conveyor"><div class="belt"><div id="rollers" class="rollers"></div><div class="railmark"></div></div></div><div id="boxwrap" class="boxwrap"><img class="boxart" data-src="assets/boxes/box-open.webp" alt=""><div id="box" class="box"></div><img class="boxclosed" data-src="assets/boxes/box-closed.webp" alt=""><div class="packtape"><span>PACK IT! 📦 · PACK IT! 📦 · PACK IT! 📦 · PACK IT! 📦</span></div><div id="smoke" class="smoke"><i class="puff" style="--x:-105px;--y:-42px;--d:0s"></i><i class="puff" style="--x:-58px;--y:-90px;--d:.03s"></i><i class="puff" style="--x:8px;--y:-108px;--d:.05s"></i><i class="puff" style="--x:76px;--y:-78px;--d:.02s"></i><i class="puff" style="--x:112px;--y:-18px;--d:.06s"></i><i class="puff" style="--x:91px;--y:58px;--d:.04s"></i><i class="puff" style="--x:28px;--y:94px;--d:0s"></i><i class="puff" style="--x:-45px;--y:88px;--d:.05s"></i><i class="puff" style="--x:-103px;--y:42px;--d:.02s"></i><i class="puff" style="--x:0px;--y:0px;--d:0s"></i></div></div><div id="tray" class="tray"></div><div class="actions"><button id="rotate" class="rotate">↻ Girar</button><button id="prepare" class="prepare">Preparar</button></div><div class="hint">Arrastra desde abajo · toca una pieza colocada para retirarla</div><div id="win" class="win">✨ PERFECT PACK!</div><div id="result" class="result"><div id="resultStars" class="result-stars">★★★</div><div class="result-stats"><span>⏱ <b id="resultTime">0.0 s</b></span><span>↻ <b id="resultMoves">0</b> mov.</span></div><div id="resultScore" class="result-score">1000 pts</div></div><button id="next" class="next">Siguiente caja →</button><div id="finalResult" class="final-result"><div class="final-card"><div class="final-box">📦</div><div class="final-title">¡PEDIDO COMPLETADO!</div><div id="finalStars" class="final-stars">★★★★★</div><div class="final-grid"><span>PUNTUACIÓN<b id="finalScore">0 pts</b></span><span>TIEMPO<b id="finalTime">0.0 s</b></span><span>MOVIMIENTOS<b id="finalMoves">0</b></span><span>CAJAS<b>5/5</b></span></div><button id="restartRun" class="restart-run">JUGAR DE NUEVO</button></div></div><div class="version"></div></main>
 <script>
-(async()=>{
-  const bootStart=performance.now();
-  try{
-    const r=await fetch(`assets/js/version.js?_=${Date.now()}`,{cache:'no-store'});
-    (0,eval)(await r.text());
-    const b=window.PACKIT_BUILD,v=window.PACKIT_VERSION;
-    document.querySelectorAll('.version,.splash-version').forEach(e=>e.textContent=v);
-    const css=document.createElement('link');
-    css.rel='stylesheet';
-    css.href=`assets/css/game.css?v=${b}`;
-    const cssReady=new Promise((ok,fail)=>{css.onload=ok;css.onerror=fail});
-    document.head.appendChild(css);
-    document.querySelectorAll('[data-src]').forEach(e=>e.src=`${e.dataset.src}?v=${b}`);
-    const load=src=>new Promise((ok,fail)=>{const s=document.createElement('script');s.src=`${src}?v=${b}`;s.onload=ok;s.onerror=fail;document.body.appendChild(s)});
-    await cssReady;
-    await load('assets/js/game.js');
-    await load('assets/js/cable-fit.js');
-    await load('assets/js/score.js');
-    await load('assets/audio/audio.js');
-    const wait=Math.max(0,850-(performance.now()-bootStart));
-    await new Promise(ok=>setTimeout(ok,wait));
-    document.body.classList.add('ready');
-    const boot=document.querySelector('#boot');
-    boot.classList.add('out');
-    setTimeout(()=>{boot.remove();document.body.style.overflow=''},190);
-  }catch(e){
-    document.querySelector('#boot').innerHTML='<div class="boot-inner"><div class="boot-box">📦</div><div class="boot-title">PACK IT!</div><div style="margin-top:18px;font-size:14px">No se pudo cargar. Recarga la página.</div></div>';
-  }
-})();
+(async()=>{const bootStart=performance.now();try{const r=await fetch(`assets/js/version.js?_=${Date.now()}`,{cache:'no-store'});(0,eval)(await r.text());const b=window.PACKIT_BUILD,v=window.PACKIT_VERSION;document.querySelectorAll('.version,.splash-version').forEach(e=>e.textContent=v);const css=document.createElement('link');css.rel='stylesheet';css.href=`assets/css/game.css?v=${b}`;const cssReady=new Promise((ok,fail)=>{css.onload=ok;css.onerror=fail});document.head.appendChild(css);document.querySelectorAll('[data-src]').forEach(e=>e.src=`${e.dataset.src}?v=${b}`);const load=src=>new Promise((ok,fail)=>{const s=document.createElement('script');s.src=`${src}?v=${b}`;s.onload=ok;s.onerror=fail;document.body.appendChild(s)});await cssReady;await load('assets/js/game.js');await load('assets/js/cable-fit.js');await load('assets/js/score.js');await load('assets/audio/audio.js');const wait=Math.max(0,850-(performance.now()-bootStart));await new Promise(ok=>setTimeout(ok,wait));document.body.classList.add('ready');const boot=document.querySelector('#boot');boot.classList.add('out');setTimeout(()=>{boot.remove();document.body.style.overflow=''},190)}catch(e){document.querySelector('#boot').innerHTML='<div class="boot-inner"><div class="boot-box">📦</div><div class="boot-title">PACK IT!</div><div style="margin-top:18px;font-size:14px">No se pudo cargar. Recarga la página.</div></div>'}})();
 </script>
 </body>
 </html>
