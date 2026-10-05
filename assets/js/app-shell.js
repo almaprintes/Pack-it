@@ -1,7 +1,7 @@
 (()=>{
 const KEY='packit_save_v1',SETTINGS='packit_settings_v1';
 const $=s=>document.querySelector(s);
-const splash=$('#splash'),startHook=$('#startGame'),continueBtn=$('#continueGame'),newBtn=$('#newGame'),settingsBtn=$('#settingsBtn'),exitBtn=$('#exitToMenu');
+const splash=$('#splash'),startHook=$('#startGame'),menuActions=$('#mainMenuActions'),continueBtn=$('#continueGame'),newBtn=$('#newGame'),settingsBtn=$('#settingsBtn'),exitBtn=$('#exitToMenu');
 const settingsPanel=$('#settingsPanel'),newConfirm=$('#newGameConfirm'),adBreak=$('#adBreak'),adContinue=$('#adContinue');
 const musicToggle=$('#musicToggle'),effectsToggle=$('#effectsToggle'),languageSelect=$('#languageSelect'),total=$('#levelTotal');
 const defaults={music:true,effects:true,language:'es'};
@@ -23,13 +23,13 @@ function applyLanguage(){
 function emitAudio(){window.dispatchEvent(new CustomEvent('packit:audio-settings',{detail:{music:settings.music,effects:settings.effects}}))}
 function saveSettings(){localStorage.setItem(SETTINGS,JSON.stringify(settings));applyLanguage();emitAudio()}
 function refreshMenu(){const p=progress();continueBtn.disabled=!p.started;continueBtn.textContent=(words[settings.language]||words.es).continue+(p.started?' · '+(p.current+1):'')}
-function showMenu(){splash.classList.remove('hide');window.dispatchEvent(new Event('packit:menu-open'));refreshMenu()}
+function revealMenu(){startHook.classList.add('menu-gone');menuActions.classList.remove('menu-actions-hidden');refreshMenu()}
+function showMenu(){splash.classList.remove('hide');revealMenu();window.dispatchEvent(new Event('packit:menu-open'));refreshMenu()}
 function begin(at,newRun=false){
  level=Math.max(0,Math.min(levels.length-1,at));
  load();
  splash.classList.add('hide');settingsPanel.classList.remove('show');newConfirm.classList.remove('show');
  saveProgress({current:level,unlocked:newRun?0:Math.max(progress().unlocked,level),started:true});
- startHook.click();
  window.dispatchEvent(new CustomEvent('packit:game-resume'));
  window.dispatchEvent(new CustomEvent('packit:level-start',{detail:{level}}));
 }
@@ -43,6 +43,7 @@ function nextAfterBreak(){
 total.textContent=levels.length;
 musicToggle.checked=settings.music;effectsToggle.checked=settings.effects;languageSelect.value=settings.language;
 applyLanguage();refreshMenu();emitAudio();
+startHook.addEventListener('click',()=>{revealMenu();window.dispatchEvent(new CustomEvent('packit:game-resume'))});
 continueBtn.addEventListener('click',()=>begin(progress().current));
 newBtn.addEventListener('click',()=>{progress().started?newConfirm.classList.add('show'):begin(0,true)});
 $('#confirmNewGame').addEventListener('click',()=>{localStorage.removeItem(KEY);begin(0,true)});
