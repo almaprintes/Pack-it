@@ -17,4 +17,6 @@ brianJob:"你的工作：",
 brianRule:"海关已经清空了乘客的行李箱。请在时间结束前把所有物品重新装回去。",
 brianLevels:"第 21–40 关 · 航空行李。",
 brianStart:"开始在 BRIAN AIR 工作"
+,
+brianFiredText:"你没能按时整理好行李箱。Brian Air 已终止你的合同。"
 };
