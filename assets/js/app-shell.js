@@ -43,8 +43,8 @@ musicToggle.checked=settings.music;effectsToggle.checked=settings.effects;const 
 applyLanguage();refreshMenu();emitAudio();
 startHook.addEventListener('click',()=>{revealMenu();window.dispatchEvent(new CustomEvent('packit:game-resume'))});
 continueBtn.addEventListener('click',()=>begin(progress().current));
-newBtn.addEventListener('click',()=>{progress().started?newConfirm.classList.add('show'):begin(0,true)});
-$('#confirmNewGame').addEventListener('click',()=>{localStorage.removeItem(KEY);begin(0,true)});
+newBtn.addEventListener('click',()=>{progress().started?newConfirm.classList.add('show'):window.PackItStory.showIntro()});
+$('#confirmNewGame').addEventListener('click',()=>{localStorage.removeItem(KEY);newConfirm.classList.remove('show');window.PackItStory.showIntro()});
 $('#cancelNewGame').addEventListener('click',()=>newConfirm.classList.remove('show'));
 settingsBtn.addEventListener('click',()=>settingsPanel.classList.add('show'));
 $('#settingsClose').addEventListener('click',()=>settingsPanel.classList.remove('show'));
@@ -58,5 +58,5 @@ $('#next').addEventListener('pointerdown',e=>{
  if(![4,9,14].includes(level)||!$('#next').classList.contains('show'))return;
  e.preventDefault();e.stopImmediatePropagation();nextBusy=true;$('#next').classList.remove('show');$('#win').classList.remove('show');boxwrap.classList.remove('shaking');adBreak.classList.add('show');window.dispatchEvent(new Event('packit:menu-open'));
 },{capture:true});
-adContinue.addEventListener('click',nextAfterBreak);
+adContinue.addEventListener('click',nextAfterBreak);window.addEventListener('packit:story-begin',()=>begin(0,true));
 })();
