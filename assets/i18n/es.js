@@ -11,4 +11,12 @@ storyFired:"DESPEDIDO",
 storyTimeUp:"SE ACABÓ EL TIEMPO",
 storyFiredText:"No terminaste el pedido a tiempo. ARMAZON ha rescindido tu contrato.",
 storyRestart:"BUSCAR TRABAJO OTRA VEZ"
+,
+suitcase:"Maleta",
+brianHired:"NUEVO TRABAJO",
+brianIntro:"Tu relación con ARMAZON ha terminado. Brian Air quiere contratarte para su zona de equipajes.",
+brianJob:"Tu trabajo:",
+brianRule:"aduanas ha vaciado las maletas de los pasajeros. Vuelve a colocar todas sus pertenencias dentro antes de que termine el tiempo.",
+brianLevels:"Niveles 21–40 · Equipajes de vuelo.",
+brianStart:"EMPEZAR EN BRIAN AIR"
 };
