@@ -50,12 +50,22 @@ html,body{overscroll-behavior:none}body{margin:0;font-family:system-ui;backgroun
 
 .story-logo{display:block;width:min(240px,82%);height:auto;margin:0 auto 8px;object-fit:contain}
 
-/* Chapter 2 · Brian Air: the packing surface becomes an inspected passenger suitcase. */
-.brian-chapter .game{background:linear-gradient(#eef4f7 0 64%,#aeb8bf 64%)}
+/* Chapter 2 · Brian Air: top-down baggage inspection workstation. */
+.brian-workspace{display:none}
+.brian-chapter .game{background:linear-gradient(90deg,#d7dee2 0 7%,#edf1f3 7% 93%,#d7dee2 93%);overflow:hidden}
+.brian-chapter .brian-workspace{display:block;position:absolute;inset:52px 0 34%;pointer-events:none;z-index:0;background:repeating-linear-gradient(90deg,transparent 0 46px,#cbd3d71f 46px 48px),linear-gradient(#f6f8f9,#e7ecef)}
+.brian-wall-logo{position:absolute;top:8%;left:5%;font-size:clamp(18px,5.5vw,30px);font-weight:1000;letter-spacing:-1.5px;color:#20262a;transform:rotate(-90deg);transform-origin:left top;opacity:.86}.brian-wall-logo b{color:#d92d2d}
+.brian-wall-sign{position:absolute;top:8%;right:5%;padding:7px 10px;border:2px solid #2f3b42;border-radius:6px;font-size:8px;font-weight:1000;letter-spacing:1px;color:#2f3b42;transform:rotate(90deg);transform-origin:right top;opacity:.65}
+.brian-wall-stripe{position:absolute;left:2.5%;right:2.5%;top:53%;height:7px;border-top:2px solid #d92d2d;border-bottom:2px solid #26333a;background:#fff}
+.brian-gate-tag{position:absolute;right:5%;bottom:8%;padding:6px 9px;border-radius:5px;background:#273239;color:#fff;font-size:9px;font-weight:1000;letter-spacing:1px;transform:rotate(90deg)}
+.brian-chapter .conveyor{background:#aeb8bd;border-color:#7d898f;box-shadow:0 10px 25px #25323a22}
+.brian-chapter .conveyor .belt{background:repeating-linear-gradient(90deg,#59646a 0 30px,#4c575d 30px 60px)}
 .brian-chapter .boxart,.brian-chapter .boxclosed,.brian-chapter .packtape{opacity:0!important}
-.brian-chapter .boxwrap:before{content:"";position:absolute;left:20.5%;top:25.5%;width:59%;height:48%;border:7px solid #252a2e;border-radius:28px;background:linear-gradient(135deg,#48535a,#30383d);box-shadow:inset 0 0 0 5px #78848a,inset 0 0 0 9px #202529,0 16px 24px #1b22282e;z-index:-1}
-.brian-chapter .boxwrap:after{content:"";position:absolute;left:39%;top:18%;width:22%;height:12%;border:7px solid #252a2e;border-bottom:0;border-radius:14px 14px 0 0;z-index:-2}
-.brian-chapter .box{background-color:#c8d0d4;background-image:linear-gradient(to right,#ffffff24 1px,transparent 1px),linear-gradient(to bottom,#ffffff24 1px,transparent 1px);border-radius:12px}
+.brian-chapter .boxwrap:before{content:"";position:absolute;left:17.5%;top:24%;width:65%;height:51%;box-sizing:border-box;border:9px solid #172126;border-radius:32px;background:linear-gradient(145deg,#1e78b6,#135f98 55%,#0d4c7d);box-shadow:inset 0 0 0 3px #58a4d1,inset 0 0 0 8px #0d4269,0 14px 24px #15232c38;z-index:-1}
+.brian-chapter .boxwrap:after{content:"";position:absolute;left:38%;top:17%;width:24%;height:11%;box-sizing:border-box;border:7px solid #172126;border-bottom:0;border-radius:15px 15px 0 0;background:#3d4a50;box-shadow:inset 0 0 0 2px #748187;z-index:-2}
+.brian-chapter .box{left:23.5%!important;top:30%!important;width:53%!important;height:39%!important;box-sizing:border-box;border:3px solid #d7e2e8;border-radius:16px;background-color:#c7d1d6;background-image:linear-gradient(to right,#61737c55 1px,transparent 1px),linear-gradient(to bottom,#61737c55 1px,transparent 1px);box-shadow:inset 0 0 0 4px #8e9da4,inset 0 7px 16px #59697032}
+.brian-chapter .box:before{content:"";position:absolute;inset:-10px;border:2px dashed #d9e3e7;border-radius:20px;pointer-events:none;opacity:.8}
+.brian-chapter .box:after{content:"BRIAN AIR · INSPECTED";position:absolute;right:-7px;bottom:-25px;padding:3px 6px;border-radius:4px;background:#f4f6f7;color:#243139;border:1px solid #87959b;font-size:7px;font-weight:1000;letter-spacing:.5px;transform:rotate(-3deg);pointer-events:none}
 .brian-card{background:#f8fafb}.brian-logo{width:min(260px,88%);border-radius:10px}
 
 /* DEV-only chapter navigation. Delete this rule together with #devChapterSkip before production. */
