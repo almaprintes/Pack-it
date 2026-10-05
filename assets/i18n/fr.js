@@ -9,4 +9,12 @@ storyFired:"LICENCIÉ",
 storyTimeUp:"TEMPS ÉCOULÉ",
 storyFiredText:"Vous n'avez pas terminé la commande à temps. ARMAZON a mis fin à votre contrat.",
 storyRestart:"RECHERCHER DU TRAVAIL"
+,
+suitcase:"Valise",
+brianHired:"NOUVEAU TRAVAIL",
+brianIntro:"Votre collaboration avec ARMAZON est terminée. Brian Air souhaite vous embaucher au service des bagages.",
+brianJob:"Votre travail :",
+brianRule:"la douane a vidé les valises des passagers. Replacez toutes leurs affaires avant la fin du temps imparti.",
+brianLevels:"Niveaux 21–40 · Bagages de vol.",
+brianStart:"COMMENCER CHEZ BRIAN AIR"
 };
