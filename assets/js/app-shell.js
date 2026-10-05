@@ -40,6 +40,13 @@ function nextAfterBreak(){
  window.dispatchEvent(new Event('packit:game-resume'));
  window.dispatchEvent(new CustomEvent('packit:level-start',{detail:{level}}));
 }
+// Always boot into the explicit title gate. Do not trust restored DOM state from mobile browsers/BFCache.
+splash.classList.remove('hide');
+startHook.classList.remove('menu-gone');
+menuActions.classList.add('menu-actions-hidden');
+settingsPanel.classList.remove('show');
+newConfirm.classList.remove('show');
+adBreak.classList.remove('show');
 total.textContent=levels.length;
 musicToggle.checked=settings.music;effectsToggle.checked=settings.effects;languageSelect.value=settings.language;
 applyLanguage();refreshMenu();emitAudio();
