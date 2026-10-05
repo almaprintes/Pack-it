@@ -1,2 +1,2 @@
-window.PACKIT_BUILD='0086';
-window.PACKIT_VERSION='DEV 0.0.86';
+window.PACKIT_BUILD='0087';
+window.PACKIT_VERSION='DEV 0.0.87';
