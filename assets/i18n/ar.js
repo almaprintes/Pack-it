@@ -9,4 +9,12 @@ storyFired:"مفصول",
 storyTimeUp:"انتهى الوقت",
 storyFiredText:"لم تُكمل الطلب في الوقت المحدد. أنهت ARMAZON عقدك.",
 storyRestart:"ابحث عن عمل من جديد"
+,
+suitcase:"حقيبة",
+brianHired:"وظيفة جديدة",
+brianIntro:"انتهت علاقتك مع ARMAZON. تريد Brian Air توظيفك في قسم الأمتعة.",
+brianJob:"مهمتك:",
+brianRule:"أفرغت الجمارك حقائب الركاب. أعد جميع متعلقاتهم إلى داخل الحقائب قبل انتهاء الوقت.",
+brianLevels:"المراحل 21–40 · أمتعة الرحلات.",
+brianStart:"ابدأ العمل في BRIAN AIR"
 };
