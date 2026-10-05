@@ -26,6 +26,6 @@ window.addEventListener('packit:run-complete',stop);
 window.addEventListener('packit:menu-open',stop);
 $('#storyAccept').addEventListener('click',beginStory);
 $('#storyRestart').addEventListener('click',()=>{fired.classList.remove('show');intro.classList.add('show')});
-$('#brianAccept').addEventListener('click',()=>{brian.classList.remove('show');level=20;load();window.dispatchEvent(new CustomEvent('packit:level-start',{detail:{level}}))});
+$('#brianAccept').addEventListener('click',()=>{brian.classList.remove('show');window.dispatchEvent(new CustomEvent('packit:brian-begin'))});
 window.PackItStory={showIntro(){intro.classList.add('show')},startClock,stop,limits};
 })();
