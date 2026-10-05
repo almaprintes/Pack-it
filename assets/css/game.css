@@ -27,3 +27,9 @@ html,body{overscroll-behavior:none}body{margin:0;font-family:system-ui;backgroun
 
 
 .menu-actions-hidden{display:none}.splash-start.menu-gone{display:none}
+
+.language-picker{border:1px solid #3c2b2022;border-radius:12px;background:#fffaf2;padding:10px 12px;font:inherit;font-weight:800;color:#3c2b20;display:flex;align-items:center;justify-content:space-between;gap:14px;min-width:155px}
+.language-options{display:none;grid-template-columns:1fr;gap:4px;margin-top:7px;padding:6px;border-radius:13px;background:#fffaf2;box-shadow:0 8px 22px #54341d20}
+.language-options.show{display:grid}
+.language-options button{border:0;background:transparent;border-radius:9px;padding:9px 10px;text-align:start;font:inherit;font-weight:750;color:#3c2b20}
+.language-options button:active{background:#3c2b2010}
