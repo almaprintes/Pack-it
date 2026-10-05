@@ -11,6 +11,7 @@ function bell(ctx,bus,when,freq,gain=.055,dur=.8){const out=ctx.createGain();out
 function stopChime(){if(!audioCtx||!chimeBus)return;const t=audioCtx.currentTime;try{chimeBus.gain.cancelScheduledValues(t);chimeBus.gain.setValueAtTime(Math.max(.0001,chimeBus.gain.value),t);chimeBus.gain.exponentialRampToValueAtTime(.0001,t+.035)}catch(e){}chimeBus=null}
 function perfectChime(){if(!effectsEnabled)return;const ctx=getCtx();if(!ctx)return;stopChime();const bus=ctx.createGain();bus.gain.value=1;bus.connect(ctx.destination);chimeBus=bus;const t=ctx.currentTime+.025;bell(ctx,bus,t,659.25,.042,.68);bell(ctx,bus,t+.13,783.99,.048,.78);bell(ctx,bus,t+.27,987.77,.055,.95);bell(ctx,bus,t+.43,1318.51,.032,.72);setTimeout(()=>{if(chimeBus===bus)chimeBus=null},1250)}
 function selectionTick(){if(!effectsEnabled)return;const ctx=getCtx();if(!ctx)return;const t=ctx.currentTime,o=ctx.createOscillator(),g=ctx.createGain();o.type='sine';o.frequency.setValueAtTime(520,t);o.frequency.exponentialRampToValueAtTime(690,t+.045);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.045,t+.006);g.gain.exponentialRampToValueAtTime(.0001,t+.07);o.connect(g);g.connect(ctx.destination);o.start(t);o.stop(t+.075)}
+function stampHit(){if(!effectsEnabled)return;const ctx=getCtx();if(!ctx)return;const t=ctx.currentTime,n=ctx.createBufferSource(),buf=ctx.createBuffer(1,Math.floor(ctx.sampleRate*.075),ctx.sampleRate),d=buf.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,4);n.buffer=buf;const filter=ctx.createBiquadFilter(),g=ctx.createGain();filter.type='lowpass';filter.frequency.value=900;g.gain.setValueAtTime(.18,t);g.gain.exponentialRampToValueAtTime(.0001,t+.075);n.connect(filter);filter.connect(g);g.connect(ctx.destination);n.start(t);n.stop(t+.08)}
 function primeConveyor(){conveyor.load()}
 function startAudio(){if(started)return;started=true;getCtx();primeConveyor();if(musicEnabled)music.play().catch(()=>{})}
 function seekConveyorStart(){try{conveyor.currentTime=.5}catch(e){}}
@@ -20,6 +21,7 @@ conveyor.addEventListener('ended',()=>{if(!conveyorRunning)return;seekConveyorSt
 document.querySelector('#startGame')?.addEventListener('click',startAudio,{passive:true});
 window.addEventListener('packit:conveyor-start',playConveyor);
 window.addEventListener('packit:item-select',selectionTick);
+window.addEventListener('packit:stamp-hit',stampHit);
 window.addEventListener('packit:conveyor-stop',stopConveyor);
 const wrap=document.querySelector('#boxwrap');if(!wrap)return;
 let wasClosed=wrap.classList.contains('closed');
