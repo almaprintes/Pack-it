@@ -86,3 +86,15 @@ html,body{overscroll-behavior:none}body{margin:0;font-family:system-ui;backgroun
 .brian-chapter .boxwrap.stamp-hit{animation:brianStampSuitcase .22s ease-out}
 @keyframes brianStampHit{0%{opacity:0;transform:translate(-50%,-135%) rotate(-11deg) scale(2.4)}45%{opacity:1;transform:translate(-50%,-50%) rotate(-7deg) scale(.82)}67%{transform:translate(-50%,-50%) rotate(-7deg) scale(1.08)}100%{opacity:.9;transform:translate(-50%,-50%) rotate(-7deg) scale(1)}}
 @keyframes brianStampSuitcase{0%,100%{translate:0 0}35%{translate:0 4px}65%{translate:0 -2px}}
+
+/* ARMAZON chapter: factory backdrop and the same readable HUD used by Brian Air. */
+.armazon-workspace{display:block;position:absolute;left:0;right:0;top:0;height:27%;min-height:220px;pointer-events:none;z-index:1;overflow:hidden;background:#d9e0e3}
+.armazon-factory-bg{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:center center;z-index:0}
+.brian-chapter .armazon-workspace{display:none}
+body:not(.brian-chapter) header{position:absolute;top:max(8px,env(safe-area-inset-top));left:10px;right:10px;height:48px;padding:0 10px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:8px;border:1px solid #ffffff8f;border-radius:16px;background:#17242dde;color:#fff;font-size:14px;box-shadow:0 7px 20px #101a2240;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:50}
+body:not(.brian-chapter) header>span:first-of-type{margin:0;justify-self:center;font-size:16px;white-space:nowrap;text-shadow:0 1px 2px #0008}
+body:not(.brian-chapter) header>span:last-of-type{justify-self:end;padding:6px 9px;border-radius:10px;background:#ffffff18;white-space:nowrap;font-size:12px}
+body:not(.brian-chapter) .exit-menu{height:32px;margin:0;padding:0 10px;background:#fff;color:#26343b;box-shadow:none;font-size:10px}
+body:not(.brian-chapter) .story-timer{top:calc(max(8px,env(safe-area-inset-top)) + 56px);left:50%;padding:7px 13px;background:#fff;color:#1f2d34;border:1px solid #ffffffc9;box-shadow:0 5px 16px #101a2238;font-size:13px;z-index:51}
+body:not(.brian-chapter) .story-timer.danger{background:#a92828;color:#fff;border-color:#d95a5a}
+body:not(.brian-chapter) .conveyor{z-index:2}
