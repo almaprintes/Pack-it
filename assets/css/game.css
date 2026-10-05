@@ -25,4 +25,5 @@ html,body{overscroll-behavior:none}body{margin:0;font-family:system-ui;backgroun
 .exit-menu{height:38px;padding:0 13px;margin-right:10px;border:0;border-radius:999px;background:#fff9edcc;color:#3c2b20;font-size:11px;font-weight:1000;letter-spacing:.5px;box-shadow:0 5px 15px #54341d1c}header>span:first-of-type{margin-right:auto}
 .ad-label{font-size:12px;font-weight:1000;letter-spacing:2px;opacity:.5}.ad-box{height:180px;margin:18px 0;display:grid;place-items:center;border:2px dashed #6f5a4840;border-radius:20px;font-size:44px;font-weight:1000;opacity:.35}
 
-.internal-start{display:none!important}
+
+.menu-actions-hidden{display:none}.splash-start.menu-gone{display:none}
