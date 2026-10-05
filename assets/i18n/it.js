@@ -1,1 +1,12 @@
-window.PACKIT_I18N=window.PACKIT_I18N||{};window.PACKIT_I18N.it={tagline:'ORDINA · INCASTRA · SPEDISCI',start:'INIZIA',continue:'CONTINUA',newGame:'NUOVA PARTITA',settings:'⚙ IMPOSTAZIONI',settingsTitle:'IMPOSTAZIONI',music:'Musica',effects:'Effetti sonori',language:'Lingua',back:'INDIETRO',newGameTitle:'NUOVA PARTITA?',newGameWarning:'I progressi della partita attuale andranno persi.',confirmNew:'SÌ, RICOMINCIA',cancel:'ANNULLA',adBreak:'PAUSA PUBBLICITARIA',adDev:'Spazio predisposto per la pubblicità tra i blocchi di livelli.',box:'Scatola',next:'Scatola successiva →',exit:'ESCI',hint:'Trascina dal basso · tocca un oggetto posizionato per rimuoverlo',rotate:'↻ Ruota',prepare:'Prepara',perfect:'✨ SCATOLA PERFETTA!',movesShort:'mosse',orderComplete:'ORDINE COMPLETATO!',score:'PUNTEGGIO',time:'TEMPO',moves:'MOSSE',boxes:'SCATOLE',playAgain:'GIOCA ANCORA',points:'pt'};
+window.PACKIT_I18N=window.PACKIT_I18N||{};window.PACKIT_I18N.it={tagline:'ORDINA · INCASTRA · SPEDISCI',start:'INIZIA',continue:'CONTINUA',newGame:'NUOVA PARTITA',settings:'⚙ IMPOSTAZIONI',settingsTitle:'IMPOSTAZIONI',music:'Musica',effects:'Effetti sonori',language:'Lingua',back:'INDIETRO',newGameTitle:'NUOVA PARTITA?',newGameWarning:'I progressi della partita attuale andranno persi.',confirmNew:'SÌ, RICOMINCIA',cancel:'ANNULLA',adBreak:'PAUSA PUBBLICITARIA',adDev:'Spazio predisposto per la pubblicità tra i blocchi di livelli.',box:'Scatola',next:'Scatola successiva →',exit:'ESCI',hint:'Trascina dal basso · tocca un oggetto posizionato per rimuoverlo',rotate:'↻ Ruota',prepare:'Prepara',perfect:'✨ SCATOLA PERFETTA!',movesShort:'mosse',orderComplete:'ORDINE COMPLETATO!',score:'PUNTEGGIO',time:'TEMPO',moves:'MOSSE',boxes:'SCATOLE',playAgain:'GIOCA ANCORA',points:'pt',
+storyHired:"SEI STATO ASSUNTO!",
+storyIntro:"Stavi cercando lavoro e ARMAZON ti offre un'opportunità nel suo centro di imballaggio.",
+storyJob:"Il tuo lavoro:",
+storyRule:"completa ogni ordine prima che scada il tempo.",
+storyOneFail:"Un solo turno fallito = LICENZIATO.",
+storyStart:"INIZIA IL MIO PRIMO TURNO",
+storyFired:"LICENZIATO",
+storyTimeUp:"TEMPO SCADUTO",
+storyFiredText:"Non hai completato l'ordine in tempo. ARMAZON ha terminato il tuo contratto.",
+storyRestart:"CERCA DI NUOVO LAVORO"
+};
