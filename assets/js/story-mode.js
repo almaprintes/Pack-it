@@ -1,8 +1,8 @@
 (()=>{
 const KEY='packit_story_v1';
 const $=s=>document.querySelector(s);
-const intro=$('#storyIntro'),fired=$('#storyFired'),timer=$('#storyTimer'),timerValue=$('#storyTimerValue');
-const limits=[45,48,50,52,55,58,60,62,65,68,70,72,75,78,80,82,85,88,90,95];
+const intro=$('#storyIntro'),fired=$('#storyFired'),brian=$('#brianIntro'),timer=$('#storyTimer'),timerValue=$('#storyTimerValue');
+const limits=[45,48,50,52,55,58,60,62,65,68,70,72,75,78,80,82,85,88,90,95,48,50,52,54,56,58,60,62,64,66,68,70,72,74,76,78,80,84,88,95];
 let remaining=0,tick=0,active=false,completed=false;
 function state(){try{return JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){return{}}}
 function save(v){localStorage.setItem(KEY,JSON.stringify(v))}
@@ -21,9 +21,11 @@ function beginStory(){
 }
 window.addEventListener('packit:level-start',startClock);
 window.addEventListener('packit:level-complete',()=>{completed=true;stop()});
+window.addEventListener('packit:chapter-complete',()=>{stop();brian.classList.add('show')});
 window.addEventListener('packit:run-complete',stop);
 window.addEventListener('packit:menu-open',stop);
 $('#storyAccept').addEventListener('click',beginStory);
 $('#storyRestart').addEventListener('click',()=>{fired.classList.remove('show');intro.classList.add('show')});
+$('#brianAccept').addEventListener('click',()=>{brian.classList.remove('show');level=20;load();window.dispatchEvent(new CustomEvent('packit:level-start',{detail:{level}}))});
 window.PackItStory={showIntro(){intro.classList.add('show')},startClock,stop,limits};
 })();
