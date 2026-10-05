@@ -2,7 +2,7 @@
 // This avoids unrelated .item nodes elsewhere in the document blocking PERFECT PACK.
 check=function(){
  const packed=[...box.querySelectorAll('.item')];
- if(packed.length!==levels[level].length)return;
+ if(packed.length!==levelItems().length)return;
  win.classList.add('show');
  window.dispatchEvent(new CustomEvent('packit:level-complete',{detail:{level}}));
  rot.classList.remove('show');prepare.classList.remove('show');selected=null;
