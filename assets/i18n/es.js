@@ -19,4 +19,6 @@ brianJob:"Tu trabajo:",
 brianRule:"aduanas ha vaciado las maletas de los pasajeros. Vuelve a colocar todas sus pertenencias dentro antes de que termine el tiempo.",
 brianLevels:"Niveles 21–40 · Equipajes de vuelo.",
 brianStart:"EMPEZAR EN BRIAN AIR"
+,
+brianFiredText:"No terminaste de preparar la maleta a tiempo. Brian Air ha rescindido tu contrato."
 };
