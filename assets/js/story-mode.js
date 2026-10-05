@@ -13,7 +13,7 @@ function startClock(ev){
  tick=setInterval(()=>{if(!active)return;remaining--;render();if(remaining<=0)fire()},1000)
 }
 function fire(){
- if(!active)return;stop();save({started:false,fired:true});window.dispatchEvent(new Event('packit:menu-open'));fired.classList.add('show')
+ if(!active)return;stop();localStorage.removeItem('packit_save_v1');save({started:false,fired:true});window.dispatchEvent(new Event('packit:menu-open'));fired.classList.add('show')
 }
 function beginStory(){
  localStorage.removeItem('packit_save_v1');save({started:true,fired:false});intro.classList.remove('show');
