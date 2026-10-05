@@ -55,7 +55,7 @@ exitBtn.addEventListener('click',showMenu);
 window.addEventListener('packit:level-complete',()=>{const p=progress(),nextLevel=Math.min(levels.length-1,level+1);saveProgress({current:nextLevel,unlocked:Math.max(p.unlocked,nextLevel),started:true})});
 window.addEventListener('packit:run-complete',()=>saveProgress({current:0,unlocked:levels.length-1,started:false}));
 $('#next').addEventListener('pointerdown',e=>{
- if(![4,9,14].includes(level)||!$('#next').classList.contains('show'))return;
+ if(![4,9,14,24,29,34].includes(level)||!$('#next').classList.contains('show'))return;
  e.preventDefault();e.stopImmediatePropagation();nextBusy=true;$('#next').classList.remove('show');$('#win').classList.remove('show');boxwrap.classList.remove('shaking');adBreak.classList.add('show');window.dispatchEvent(new Event('packit:menu-open'));
 },{capture:true});
 adContinue.addEventListener('click',nextAfterBreak);window.addEventListener('packit:story-begin',()=>begin(0,true));
