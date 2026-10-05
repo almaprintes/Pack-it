@@ -11,4 +11,12 @@ storyFired:"FIRED",
 storyTimeUp:"TIME'S UP",
 storyFiredText:"You didn't finish the order in time. ARMAZON has terminated your contract.",
 storyRestart:"LOOK FOR WORK AGAIN"
+,
+suitcase:"Suitcase",
+brianHired:"NEW JOB",
+brianIntro:"Your time with ARMAZON is over. Brian Air wants to hire you for its baggage area.",
+brianJob:"Your job:",
+brianRule:"customs has emptied the passengers' suitcases. Put all their belongings back inside before time runs out.",
+brianLevels:"Levels 21–40 · Flight baggage.",
+brianStart:"START AT BRIAN AIR"
 };
