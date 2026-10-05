@@ -14,3 +14,13 @@ html,body{overscroll-behavior:none}body{margin:0;font-family:system-ui;backgroun
 .tray .item.selected:before{content:"";position:absolute;inset:-4px;border:1.5px solid #6f5a4866;border-radius:13px;background:#fff3;box-shadow:0 2px 7px #54341d18;z-index:-1;animation:itemSelectedPop .14s ease-out}
 .tray .item.selected .item-art{filter:drop-shadow(0 2px 3px #3c2b2030)}
 @keyframes itemSelectedPop{from{transform:scale(.96);opacity:.35}to{transform:scale(1);opacity:1}}
+
+/* App shell: menu, settings and block breaks. */
+.menu-actions{display:grid;gap:11px;width:min(82vw,310px);margin:0 auto}
+.menu-primary,.menu-secondary,.menu-ghost,.menu-danger{border:0;border-radius:999px;padding:15px 24px;font-size:15px;font-weight:1000;letter-spacing:.25px}
+.menu-primary{background:#3c2b20;color:#fff;box-shadow:0 10px 24px #54341d2b}.menu-secondary{background:#fffaf0;color:#3c2b20;box-shadow:0 8px 20px #54341d18}.menu-ghost{background:transparent;color:#3c2b20;border:1.5px solid #6f5a4840}.menu-danger{background:#9d3f32;color:#fff}
+.menu-primary:disabled{opacity:.38;box-shadow:none}
+.menu-overlay{position:fixed;inset:0;z-index:1200;display:flex;align-items:center;justify-content:center;padding:28px;background:#2e2119a8;backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:opacity .18s ease,visibility .18s ease}
+.menu-overlay.show{opacity:1;visibility:visible}.menu-panel{width:min(88vw,360px);padding:26px;border-radius:26px;background:#fff9ed;box-shadow:0 24px 60px #2f1c1244;text-align:center}.menu-panel h2{margin:0 0 22px;font-size:25px}.menu-panel p{line-height:1.45;opacity:.72;margin:-7px 0 22px}.menu-panel label{display:flex;align-items:center;justify-content:space-between;padding:14px 4px;border-bottom:1px solid #6f5a4820;font-weight:850}.menu-panel input{width:23px;height:23px}.menu-panel select{font:inherit;font-weight:800;padding:7px 10px;border:1px solid #6f5a4840;border-radius:10px;background:#fff}.menu-panel button{width:100%;margin-top:18px}.confirm-panel .menu-ghost{margin-top:9px}
+.exit-menu{width:40px;height:40px;margin-right:10px;border:0;border-radius:50%;background:#fff9edcc;color:#3c2b20;font-size:19px;font-weight:1000;box-shadow:0 5px 15px #54341d1c}header>span:first-of-type{margin-right:auto}
+.ad-label{font-size:12px;font-weight:1000;letter-spacing:2px;opacity:.5}.ad-box{height:180px;margin:18px 0;display:grid;place-items:center;border:2px dashed #6f5a4840;border-radius:20px;font-size:44px;font-weight:1000;opacity:.35}
