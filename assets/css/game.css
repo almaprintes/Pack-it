@@ -8,4 +8,4 @@ html,body{overscroll-behavior:none}body{margin:0;font-family:system-ui;backgroun
 .pan .item-art{width:100%!important;height:100%!important;object-fit:contain;object-position:left center}
 
 /* Variable-size boxes: scale the complete cardboard while preserving the original inner opening. */
-.boxwrap{scale:var(--box-scale,1);transform-origin:50% 50%;top:calc(27% + (min(64vw,320px) / 2));translate:0 -50%}
+.boxwrap{scale:var(--box-scale,1);transform-origin:50% 0}
