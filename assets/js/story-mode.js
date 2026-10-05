@@ -13,7 +13,7 @@ function startClock(ev){
  tick=setInterval(()=>{if(!active)return;remaining--;render();if(remaining<=0)fire()},1000)
 }
 function fire(){
- if(!active)return;stop();localStorage.removeItem('packit_save_v1');save({started:false,fired:true});window.dispatchEvent(new Event('packit:menu-open'));fired.classList.add('show')
+ if(!active)return;stop();const isBrian=level>=20,logo=$('#firedCompanyLogo'),copy=$('#firedCompanyText');if(logo)logo.src=isBrian?'assets/brands/brian-air-logo.webp':$('#storyIntro .story-logo').src;if(copy){copy.dataset.i18n=isBrian?'brianFiredText':'storyFiredText';copy.textContent=PackItI18n.t(copy.dataset.i18n)}localStorage.removeItem('packit_save_v1');save({started:false,fired:true});window.dispatchEvent(new Event('packit:menu-open'));fired.classList.add('show')
 }
 function beginStory(){
  localStorage.removeItem('packit_save_v1');save({started:true,fired:false});intro.classList.remove('show');
