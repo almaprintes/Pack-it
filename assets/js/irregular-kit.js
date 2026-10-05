@@ -1,8 +1,8 @@
 // Irregular item kit — DEV 0.0.79
 // Footprints follow the visible silhouette and support the game's existing 0°/90° rotation.
 Object.assign(catalog,{
- sock:{c:'sock',asset:asset('assets/items/sock-white-irregular-v1.webp'),shape:[[0,1],[1,1],[1,0]]},
- dryer:{c:'dryer',asset:asset('assets/items/hair-dryer-irregular-v1.webp'),shape:[[1,1,1],[0,0,1]]},
+ sock:{c:'sock',asset:asset('assets/items/sock-white-irregular-v1.webp'),shape:[[1,0],[1,1]]},
+ dryer:{c:'dryer',asset:asset('assets/items/hair-dryer-irregular-v1.webp'),shape:[[1,1,1],[0,1,0]]},
  hanger:{c:'hanger',asset:asset('assets/items/wooden-hanger-irregular-v1.webp'),shape:[[0,1,0],[1,1,1]]},
  pan:{c:'pan',asset:asset('assets/items/frying-pan-irregular-v1.webp'),shape:[[1,1,1,0],[1,1,0,0]]},
  bottle:{c:'bottle',asset:asset('assets/items/water-bottle-irregular-v1.webp'),shape:[[1],[1]]},
