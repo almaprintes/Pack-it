@@ -76,3 +76,13 @@ html,body{overscroll-behavior:none}body{margin:0;font-family:system-ui;backgroun
 .brian-chapter .story-timer{top:calc(max(8px,env(safe-area-inset-top)) + 56px);left:50%;padding:7px 13px;background:#fff;color:#1f2d34;border:1px solid #ffffffc9;box-shadow:0 5px 16px #101a2238;font-size:13px;z-index:51}
 .brian-chapter .story-timer.danger{background:#a92828;color:#fff;border-color:#d95a5a}
 .brian-chapter .brian-workspace{top:0;height:27%;min-height:220px}
+
+/* Brian Air procedural customs stamp. */
+.brian-stamp{display:none;position:absolute;left:50%;top:49%;width:48%;transform:translate(-50%,-50%) rotate(-7deg) scale(2.4);z-index:24;padding:7px 5px 6px;border:5px double #b5222b;border-radius:9px;color:#b5222b;background:#fff3;font-weight:1000;text-align:center;line-height:.9;letter-spacing:.5px;opacity:0;filter:drop-shadow(0 2px 1px #fff8);pointer-events:none}
+.brian-stamp span{display:block;font-size:clamp(15px,5vw,24px);text-shadow:1px 0 #b5222b,-1px 0 #b5222b}
+.brian-stamp small{display:block;margin-top:5px;font-size:clamp(6px,1.8vw,9px);letter-spacing:1.4px}
+.brian-chapter .boxwrap.closed .brian-stamp{display:block}
+.brian-chapter .brian-stamp.stamping{display:block;animation:brianStampHit .48s cubic-bezier(.16,.88,.28,1.18) forwards}
+.brian-chapter .boxwrap.stamp-hit{animation:brianStampSuitcase .22s ease-out}
+@keyframes brianStampHit{0%{opacity:0;transform:translate(-50%,-135%) rotate(-11deg) scale(2.4)}45%{opacity:1;transform:translate(-50%,-50%) rotate(-7deg) scale(.82)}67%{transform:translate(-50%,-50%) rotate(-7deg) scale(1.08)}100%{opacity:.9;transform:translate(-50%,-50%) rotate(-7deg) scale(1)}}
+@keyframes brianStampSuitcase{0%,100%{translate:0 0}35%{translate:0 4px}65%{translate:0 -2px}}
