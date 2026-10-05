@@ -53,9 +53,9 @@ html,body{overscroll-behavior:none}body{margin:0;font-family:system-ui;backgroun
 /* Chapter 2 · Brian Air: top-down baggage inspection workstation. */
 .brian-workspace{display:none}
 .brian-chapter .game{background:linear-gradient(90deg,#d7dee2 0 7%,#edf1f3 7% 93%,#d7dee2 93%);overflow:hidden}
-.brian-chapter .brian-workspace{display:block;position:absolute;left:0;right:0;top:52px;height:calc(27% - 52px);min-height:170px;pointer-events:none;z-index:0;background-color:#dfe7eb;background-image:linear-gradient(to bottom,transparent 88%,#00000012),url("assets/brands/brian-air-airport-background.webp");background-size:100% auto;background-position:center top;background-repeat:no-repeat;overflow:hidden}
-.brian-wall-logo,.brian-wall-sign,.brian-wall-stripe,.brian-gate-tag{display:none}
-.brian-chapter .conveyor{background:#aeb8bd;border-color:#7d898f;box-shadow:0 10px 25px #25323a22}
+.brian-chapter .brian-workspace{display:block;position:absolute;left:0;right:0;top:52px;height:calc(27% - 52px);min-height:190px;pointer-events:none;z-index:1;overflow:hidden;background:#dfe7eb}
+.brian-airport-bg{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:center 34%;z-index:0}.brian-wall-logo,.brian-wall-sign,.brian-wall-stripe,.brian-gate-tag{display:none}
+.brian-chapter .conveyor{z-index:2;background:#aeb8bd;border-color:#7d898f;box-shadow:0 10px 25px #25323a22}
 .brian-chapter .conveyor .belt{background:repeating-linear-gradient(90deg,#59646a 0 30px,#4c575d 30px 60px)}
 .brian-chapter .boxart,.brian-chapter .boxclosed,.brian-chapter .packtape{opacity:0!important}
 .brian-chapter .boxwrap:before{content:"";position:absolute;left:17.5%;top:24%;width:65%;height:51%;box-sizing:border-box;border:9px solid #172126;border-radius:32px;background:linear-gradient(145deg,#1e78b6,#135f98 55%,#0d4c7d);box-shadow:inset 0 0 0 3px #58a4d1,inset 0 0 0 8px #0d4269,0 14px 24px #15232c38;z-index:-1}
