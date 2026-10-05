@@ -9,4 +9,12 @@ storyFired:"你被解雇了",
 storyTimeUp:"时间到",
 storyFiredText:"你没能按时完成订单。ARMAZON 已终止你的合同。",
 storyRestart:"重新找工作"
+,
+suitcase:"行李箱",
+brianHired:"新工作",
+brianIntro:"你与 ARMAZON 的工作关系已经结束。Brian Air 想聘请你到行李区工作。",
+brianJob:"你的工作：",
+brianRule:"海关已经清空了乘客的行李箱。请在时间结束前把所有物品重新装回去。",
+brianLevels:"第 21–40 关 · 航空行李。",
+brianStart:"开始在 BRIAN AIR 工作"
 };
