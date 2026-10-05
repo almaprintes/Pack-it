@@ -3,3 +3,6 @@ html,body{overscroll-behavior:none}body{margin:0;font-family:system-ui;backgroun
 
 /* Exact logical footprint shown while dragging over the box. */
 .footprint-preview{position:fixed;inset:0;z-index:80;pointer-events:none;opacity:0;transition:opacity .06s ease}.footprint-preview.show{opacity:1}.footprint-preview i{position:absolute;display:block;border-radius:5px;transform:scale(.88);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.72);transition:background .08s ease}.footprint-preview.valid i{background:rgba(92,190,118,.28);outline:1px solid rgba(49,135,73,.48)}.footprint-preview.invalid i{background:rgba(218,91,75,.25);outline:1px solid rgba(166,52,40,.5)}
+
+/* Pan calibration: align the circular head with its logical 2x2 footprint. */
+.pan .item-art{width:100%!important;height:100%!important;object-fit:contain;object-position:left center}
