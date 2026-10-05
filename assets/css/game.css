@@ -67,3 +67,12 @@ html,body{overscroll-behavior:none}body{margin:0;font-family:system-ui;backgroun
 
 /* DEV-only chapter navigation. Delete this rule together with #devChapterSkip before production. */
 .dev-chapter-skip{border:1.5px dashed #9d3f3270;border-radius:999px;padding:11px 18px;background:#9d3f3210;color:#8a342a;font-size:11px;font-weight:1000;letter-spacing:.7px;width:100%;margin-top:2px}
+
+/* Brian Air HUD: keep controls readable over the illustrated airport. */
+.brian-chapter header{position:absolute;top:max(8px,env(safe-area-inset-top));left:10px;right:10px;height:48px;padding:0 10px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:8px;border:1px solid #ffffff8f;border-radius:16px;background:#17242dde;color:#fff;font-size:14px;box-shadow:0 7px 20px #101a2240;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:50}
+.brian-chapter header>span:first-of-type{margin:0;justify-self:center;font-size:16px;white-space:nowrap;text-shadow:0 1px 2px #0008}
+.brian-chapter header>span:last-of-type{justify-self:end;padding:6px 9px;border-radius:10px;background:#ffffff18;white-space:nowrap;font-size:12px}
+.brian-chapter .exit-menu{height:32px;margin:0;padding:0 10px;background:#fff;color:#26343b;box-shadow:none;font-size:10px}
+.brian-chapter .story-timer{top:calc(max(8px,env(safe-area-inset-top)) + 56px);left:50%;padding:7px 13px;background:#fff;color:#1f2d34;border:1px solid #ffffffc9;box-shadow:0 5px 16px #101a2238;font-size:13px;z-index:51}
+.brian-chapter .story-timer.danger{background:#a92828;color:#fff;border-color:#d95a5a}
+.brian-chapter .brian-workspace{top:0;height:27%;min-height:220px}
