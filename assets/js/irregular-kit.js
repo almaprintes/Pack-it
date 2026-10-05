@@ -35,7 +35,28 @@ levels.splice(0,levels.length,
  {rows:6,cols:8,items:['book','camera','pan','headphones','umbrella','sock','bottle','mug']},
  {rows:6,cols:8,items:['book','shoe','dryer','hanger','headphones','sock','bottle','mug']},
  {rows:6,cols:8,items:['book','camera','shoe','pan','umbrella','headphones','sock','bottle']},
- {rows:6,cols:8,items:['book','camera','shoe','pan','dryer','hanger','headphones','umbrella','sock','bottle']}
+ {rows:6,cols:8,items:['book','camera','shoe','pan','dryer','hanger','headphones','umbrella','sock','bottle']},
+ // Chapter 2 · Brian Air · passenger luggage after customs inspection
+ {chapter:'brian',rows:4,cols:4,items:['bottle','sock','mug']},
+ {chapter:'brian',rows:4,cols:4,items:['book','bottle','sock','mug']},
+ {chapter:'brian',rows:4,cols:4,items:['dryer','bottle','sock','mug']},
+ {chapter:'brian',rows:4,cols:4,items:['hanger','bottle','sock','mug']},
+ {chapter:'brian',rows:4,cols:4,items:['pan','headphones','sock','bottle']},
+ {chapter:'brian',rows:4,cols:5,items:['umbrella','hanger','sock','bottle','mug']},
+ {chapter:'brian',rows:4,cols:5,items:['dryer','headphones','sock','bottle','mug']},
+ {chapter:'brian',rows:4,cols:5,items:['pan','hanger','bottle','sock','mug']},
+ {chapter:'brian',rows:4,cols:5,items:['umbrella','dryer','headphones','sock','bottle']},
+ {chapter:'brian',rows:4,cols:5,items:['pan','headphones','hanger','sock','bottle']},
+ {chapter:'brian',rows:5,cols:6,items:['book','dryer','hanger','sock','bottle','mug']},
+ {chapter:'brian',rows:5,cols:6,items:['camera','headphones','umbrella','sock','bottle','mug']},
+ {chapter:'brian',rows:5,cols:6,items:['shoe','pan','hanger','sock','bottle','mug']},
+ {chapter:'brian',rows:5,cols:6,items:['book','camera','dryer','headphones','sock','bottle']},
+ {chapter:'brian',rows:5,cols:6,items:['shoe','pan','hanger','headphones','sock','bottle']},
+ {chapter:'brian',rows:6,cols:8,items:['book','camera','shoe','dryer','hanger','sock','bottle','mug']},
+ {chapter:'brian',rows:6,cols:8,items:['book','camera','pan','headphones','umbrella','sock','bottle','mug']},
+ {chapter:'brian',rows:6,cols:8,items:['book','shoe','dryer','hanger','headphones','sock','bottle','mug']},
+ {chapter:'brian',rows:6,cols:8,items:['book','camera','shoe','pan','umbrella','headphones','sock','bottle']},
+ {chapter:'brian',rows:6,cols:8,items:['book','camera','shoe','pan','dryer','hanger','headphones','umbrella','sock','bottle']}
 );
 
 // game.js has already performed its initial load before this extension is evaluated.
