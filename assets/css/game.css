@@ -53,11 +53,8 @@ html,body{overscroll-behavior:none}body{margin:0;font-family:system-ui;backgroun
 /* Chapter 2 · Brian Air: top-down baggage inspection workstation. */
 .brian-workspace{display:none}
 .brian-chapter .game{background:linear-gradient(90deg,#d7dee2 0 7%,#edf1f3 7% 93%,#d7dee2 93%);overflow:hidden}
-.brian-chapter .brian-workspace{display:block;position:absolute;inset:52px 0 34%;pointer-events:none;z-index:0;background:repeating-linear-gradient(90deg,transparent 0 46px,#cbd3d71f 46px 48px),linear-gradient(#f6f8f9,#e7ecef)}
-.brian-wall-logo{position:absolute;top:8%;left:5%;font-size:clamp(18px,5.5vw,30px);font-weight:1000;letter-spacing:-1.5px;color:#20262a;transform:rotate(-90deg);transform-origin:left top;opacity:.86}.brian-wall-logo b{color:#d92d2d}
-.brian-wall-sign{position:absolute;top:8%;right:5%;padding:7px 10px;border:2px solid #2f3b42;border-radius:6px;font-size:8px;font-weight:1000;letter-spacing:1px;color:#2f3b42;transform:rotate(90deg);transform-origin:right top;opacity:.65}
-.brian-wall-stripe{position:absolute;left:2.5%;right:2.5%;top:53%;height:7px;border-top:2px solid #d92d2d;border-bottom:2px solid #26333a;background:#fff}
-.brian-gate-tag{position:absolute;right:5%;bottom:8%;padding:6px 9px;border-radius:5px;background:#273239;color:#fff;font-size:9px;font-weight:1000;letter-spacing:1px;transform:rotate(90deg)}
+.brian-chapter .brian-workspace{display:block;position:absolute;left:0;right:0;top:52px;height:calc(27% - 52px + min(64vw,320px));min-height:300px;pointer-events:none;z-index:0;background-image:linear-gradient(to bottom,transparent 78%,#00000018),url("assets/brands/brian-air-airport-background.webp");background-size:cover;background-position:center 42%;background-repeat:no-repeat}
+.brian-wall-logo,.brian-wall-sign,.brian-wall-stripe,.brian-gate-tag{display:none}
 .brian-chapter .conveyor{background:#aeb8bd;border-color:#7d898f;box-shadow:0 10px 25px #25323a22}
 .brian-chapter .conveyor .belt{background:repeating-linear-gradient(90deg,#59646a 0 30px,#4c575d 30px 60px)}
 .brian-chapter .boxart,.brian-chapter .boxclosed,.brian-chapter .packtape{opacity:0!important}
