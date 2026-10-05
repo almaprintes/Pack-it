@@ -10,19 +10,10 @@ function read(key,fallback){try{return Object.assign(copy(fallback),JSON.parse(l
 function saveProgress(data){localStorage.setItem(KEY,JSON.stringify(data));refreshMenu()}
 function progress(){return read(KEY,{current:0,unlocked:0,started:false})}
 let settings=read(SETTINGS,defaults);
-const words={
- es:{tagline:'ORDENA · ENCAJA · ENVÍA',continue:'CONTINUAR',newGame:'NUEVO JUEGO',settings:'⚙ CONFIGURACIÓN',settingsTitle:'CONFIGURACIÓN',music:'Música',effects:'Efectos',language:'Idioma',back:'VOLVER',newGameTitle:'¿NUEVO JUEGO?',newGameWarning:'Se perderá el progreso de la partida actual.',confirmNew:'SÍ, EMPEZAR DE NUEVO',cancel:'CANCELAR',adBreak:'PAUSA PUBLICITARIA',adDev:'Espacio preparado para el anuncio entre bloques.',box:'Caja',next:'Siguiente caja →',exit:'SALIR',hint:'Arrastra desde abajo · toca una pieza colocada para retirarla'},
- en:{tagline:'SORT · FIT · SHIP',continue:'CONTINUE',newGame:'NEW GAME',settings:'⚙ SETTINGS',settingsTitle:'SETTINGS',music:'Music',effects:'Effects',language:'Language',back:'BACK',newGameTitle:'NEW GAME?',newGameWarning:'Your current game progress will be lost.',confirmNew:'YES, START OVER',cancel:'CANCEL',adBreak:'AD BREAK',adDev:'Space prepared for the ad between level blocks.',box:'Box',next:'Next box →',exit:'EXIT',hint:'Drag from below · tap a placed item to remove it'}
-};
-function applyLanguage(){
- const t=words[settings.language]||words.es;
- document.documentElement.lang=settings.language;
- document.querySelectorAll('[data-i18n]').forEach(e=>{const k=e.dataset.i18n;if(t[k])e.textContent=t[k]});
- const next=$('#next');if(next)next.textContent=t.next;
-}
+function applyLanguage(){PackItI18n.apply(settings.language)}
 function emitAudio(){window.dispatchEvent(new CustomEvent('packit:audio-settings',{detail:{music:settings.music,effects:settings.effects}}))}
 function saveSettings(){localStorage.setItem(SETTINGS,JSON.stringify(settings));applyLanguage();emitAudio()}
-function refreshMenu(){const p=progress();continueBtn.disabled=!p.started;continueBtn.textContent=(words[settings.language]||words.es).continue+(p.started?' · '+(p.current+1):'')}
+function refreshMenu(){const p=progress();continueBtn.disabled=!p.started;continueBtn.textContent=PackItI18n.t('continue',settings.language)+(p.started?' · '+(p.current+1):'')}
 function revealMenu(){startHook.classList.add('menu-gone');menuActions.classList.remove('menu-actions-hidden');refreshMenu()}
 function showMenu(){splash.classList.remove('hide');revealMenu();window.dispatchEvent(new Event('packit:menu-open'));refreshMenu()}
 function begin(at,newRun=false){
