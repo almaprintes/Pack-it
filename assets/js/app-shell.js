@@ -34,10 +34,11 @@ function begin(at,newRun=false){
  window.dispatchEvent(new CustomEvent('packit:level-start',{detail:{level}}));
 }
 function nextAfterBreak(){
+ level++;load(true);nextBusy=false;
+ saveProgress({current:level,unlocked:Math.max(progress().unlocked,level),started:true});
  adBreak.classList.remove('show');
- moveBoxAndBelt();
- setTimeout(()=>{level++;load(false);saveProgress({current:level,unlocked:Math.max(progress().unlocked,level),started:true});window.dispatchEvent(new CustomEvent('packit:level-start',{detail:{level}}))},350);
- setTimeout(()=>nextBusy=false,820);
+ window.dispatchEvent(new Event('packit:game-resume'));
+ window.dispatchEvent(new CustomEvent('packit:level-start',{detail:{level}}));
 }
 total.textContent=levels.length;
 musicToggle.checked=settings.music;effectsToggle.checked=settings.effects;languageSelect.value=settings.language;
@@ -58,5 +59,5 @@ $('#next').addEventListener('pointerdown',e=>{
  if(![4,9,14].includes(level)||!$('#next').classList.contains('show'))return;
  e.preventDefault();e.stopImmediatePropagation();nextBusy=true;$('#next').classList.remove('show');$('#win').classList.remove('show');boxwrap.classList.remove('shaking');adBreak.classList.add('show');window.dispatchEvent(new Event('packit:menu-open'));
 },{capture:true});
-adContinue.addEventListener('click',()=>{window.dispatchEvent(new Event('packit:game-resume'));nextAfterBreak()});
+adContinue.addEventListener('click',nextAfterBreak);
 })();
