@@ -1,7 +1,7 @@
 (()=>{
 const KEY='packit_save_v1',SETTINGS='packit_settings_v1';
 const $=s=>document.querySelector(s);
-const splash=$('#splash'),startHook=$('#startGame'),menuActions=$('#mainMenuActions'),continueBtn=$('#continueGame'),newBtn=$('#newGame'),settingsBtn=$('#settingsBtn'),exitBtn=$('#exitToMenu');
+const splash=$('#splash'),startHook=$('#startGame'),menuActions=$('#mainMenuActions'),continueBtn=$('#continueGame'),newBtn=$('#newGame'),settingsBtn=$('#settingsBtn'),exitBtn=$('#exitToMenu'),devChapterSkip=$('#devChapterSkip');
 const settingsPanel=$('#settingsPanel'),newConfirm=$('#newGameConfirm'),adBreak=$('#adBreak'),adContinue=$('#adContinue');
 const musicToggle=$('#musicToggle'),effectsToggle=$('#effectsToggle'),languagePicker=$('#languagePicker'),languageCurrent=$('#languageCurrent'),languageOptions=$('#languageOptions'),total=$('#levelTotal');
 const defaults={music:true,effects:true,language:'es'};
@@ -46,7 +46,7 @@ continueBtn.addEventListener('click',()=>begin(progress().current));
 newBtn.addEventListener('click',()=>{progress().started?newConfirm.classList.add('show'):window.PackItStory.showIntro()});
 $('#confirmNewGame').addEventListener('click',()=>{localStorage.removeItem(KEY);newConfirm.classList.remove('show');window.PackItStory.showIntro()});
 $('#cancelNewGame').addEventListener('click',()=>newConfirm.classList.remove('show'));
-settingsBtn.addEventListener('click',()=>settingsPanel.classList.add('show'));
+settingsBtn.addEventListener('click',()=>settingsPanel.classList.add('show'));devChapterSkip?.addEventListener('click',()=>{splash.classList.add('hide');window.dispatchEvent(new CustomEvent('packit:chapter-complete',{detail:{chapter:'armazon',nextLevel:20,devSkip:true}}))});
 $('#settingsClose').addEventListener('click',()=>settingsPanel.classList.remove('show'));
 musicToggle.addEventListener('change',()=>{settings.music=musicToggle.checked;saveSettings()});
 effectsToggle.addEventListener('change',()=>{settings.effects=effectsToggle.checked;saveSettings()});
