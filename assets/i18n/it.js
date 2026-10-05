@@ -17,4 +17,6 @@ brianJob:"Il tuo lavoro:",
 brianRule:"la dogana ha svuotato le valigie dei passeggeri. Rimetti tutti i loro oggetti dentro prima che scada il tempo.",
 brianLevels:"Livelli 21–40 · Bagagli di volo.",
 brianStart:"INIZIA DA BRIAN AIR"
+,
+brianFiredText:"Non hai completato la valigia in tempo. Brian Air ha terminato il tuo contratto."
 };
