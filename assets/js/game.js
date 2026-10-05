@@ -19,8 +19,12 @@ const levelData=()=>Array.isArray(levels[level])?{rows:6,cols:8,items:levels[lev
 const levelItems=()=>levelData().items;
 function applyBoxSize(){
  const d=levelData();ROWS=d.rows||6;COLS=d.cols||8;
- box.style.width=(53*COLS/8)+'%';box.style.height=(39*ROWS/6)+'%';
- box.style.left='50%';box.style.top='49.5%';box.style.transform='translate(-50%,-50%)';
+ // Scale the whole cardboard box. The playable grid always keeps the original
+ // 53% x 39% opening, so its outer cells still meet the inner cardboard edges.
+ const scale=Math.min(1,Math.max(.58,Math.max(COLS/8,ROWS/6)));
+ boxwrap.style.setProperty('--box-scale',scale);
+ box.style.width='53%';box.style.height='39%';
+ box.style.left='23.5%';box.style.top='30%';box.style.transform='';
  box.style.gridTemplateColumns=`repeat(${COLS},1fr)`;
  box.style.gridTemplateRows=`repeat(${ROWS},1fr)`;
  box.style.backgroundSize=(100/COLS)+'% 100%,100% '+(100/ROWS)+'%';
