@@ -19,4 +19,6 @@ brianJob:"Your job:",
 brianRule:"customs has emptied the passengers' suitcases. Put all their belongings back inside before time runs out.",
 brianLevels:"Levels 21–40 · Flight baggage.",
 brianStart:"START AT BRIAN AIR"
+,
+brianFiredText:"You didn't finish packing the suitcase in time. Brian Air has terminated your contract."
 };
