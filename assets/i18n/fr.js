@@ -17,4 +17,6 @@ brianJob:"Votre travail :",
 brianRule:"la douane a vidé les valises des passagers. Replacez toutes leurs affaires avant la fin du temps imparti.",
 brianLevels:"Niveaux 21–40 · Bagages de vol.",
 brianStart:"COMMENCER CHEZ BRIAN AIR"
+,
+brianFiredText:"Vous n'avez pas terminé la valise à temps. Brian Air a mis fin à votre contrat."
 };
