@@ -33,3 +33,9 @@ html,body{overscroll-behavior:none}body{margin:0;font-family:system-ui;backgroun
 .language-options.show{display:grid}
 .language-options button{border:0;background:transparent;border-radius:9px;padding:9px 10px;text-align:start;font:inherit;font-weight:750;color:#3c2b20}
 .language-options button:active{background:#3c2b2010}
+
+/* Language row: keep the custom picker inside the settings card on narrow screens. */
+.menu-panel label:has(.language-picker){display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:12px}
+.language-picker{min-width:0;max-width:100%;width:100%;margin-top:0!important;box-sizing:border-box}
+.language-options{grid-column:1/-1;width:100%;max-width:100%;box-sizing:border-box;margin-top:0}
+.language-options button{width:100%;margin-top:0!important;box-sizing:border-box;white-space:normal}
