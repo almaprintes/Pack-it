@@ -9,4 +9,12 @@ storyFired:"LICENZIATO",
 storyTimeUp:"TEMPO SCADUTO",
 storyFiredText:"Non hai completato l'ordine in tempo. ARMAZON ha terminato il tuo contratto.",
 storyRestart:"CERCA DI NUOVO LAVORO"
+,
+suitcase:"Valigia",
+brianHired:"NUOVO LAVORO",
+brianIntro:"Il tuo rapporto con ARMAZON è terminato. Brian Air vuole assumerti nell'area bagagli.",
+brianJob:"Il tuo lavoro:",
+brianRule:"la dogana ha svuotato le valigie dei passeggeri. Rimetti tutti i loro oggetti dentro prima che scada il tempo.",
+brianLevels:"Livelli 21–40 · Bagagli di volo.",
+brianStart:"INIZIA DA BRIAN AIR"
 };
