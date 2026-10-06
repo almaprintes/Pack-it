@@ -127,7 +127,8 @@ body:not(.brian-chapter) .conveyor{z-index:2}
 }
 
 /* STORY pause + rewarded rescue */
-.story-pause{position:fixed;z-index:60;top:calc(max(68px,env(safe-area-inset-top) + 54px) + 58px);right:14px;left:auto;transform:none;width:48px;height:44px;border:1px solid #ffffff55;border-radius:14px;background:#171717cc;color:#fff;font-size:20px;font-weight:950;box-shadow:0 5px 16px #0005;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.story-pause{position:fixed;z-index:60;top:max(68px,calc(env(safe-area-inset-top) + 54px));left:calc(50% + 76px);right:auto;transform:none;width:40px;height:35px;border:1px solid #ffffffc9;border-radius:999px;background:#fff9edeb;color:#3c2b20;font-size:18px;font-weight:950;box-shadow:0 6px 18px #54341d22}
+.brian-chapter .story-pause{top:calc(max(8px,env(safe-area-inset-top)) + 56px);height:33px;background:#fff;color:#1f2d34;box-shadow:0 5px 16px #101a2238}
 .story-pause:active{transform:scale(.96)}
 .pause-overlay{position:absolute;z-index:100000;inset:0;display:none;align-items:center;justify-content:center;padding:24px;background:#111e;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);touch-action:none}
 .pause-overlay.show{display:flex}.pause-card{width:min(360px,92vw);padding:28px 22px;text-align:center;border:1px solid #ffffff26;border-radius:24px;background:#171717f2;color:#fff;box-shadow:0 20px 55px #0009}.pause-icon{font-size:42px;font-weight:950}.pause-card h2{margin:12px 0 8px;font-size:24px}.pause-card p{margin:0 0 20px;color:#ffffffb8;font-weight:700}.game.story-paused>:not(.pause-overlay){filter:blur(22px);pointer-events:none}.game.story-paused .pause-overlay{filter:none;pointer-events:auto}
