@@ -20,4 +20,4 @@ brianStart:"开始在 BRIAN AIR 工作"
 ,
 brianFiredText:"乘客提前回来了，发现自己的全部家当散落在航站楼。Brian Air 表示从没见过你。"
 };
-Object.assign(window.PACKIT_I18N.zh,{"bag":"购物袋","bagsUsed":"袋数","itemsRemaining":"剩余商品","newBag":"新袋子","almonteHired":"新工作","almonteIntro":"ALMONTE 雇你做收银员兼装袋员。","almonteJob":"你的任务：","almonteRule":"商品会从收银传送带进入。尽量用最少的袋子装下全部商品。需要时再开新袋子。袋子用太多，顾客会因为要付袋子钱而生气。","almonteLevels":"第 41–60 关 · 每关都是一位新顾客。","almonteStart":"开始在 ALMONTE 工作","almonteFiredText":"你用了太多袋子。顾客生气了，ALMONTE 解雇了你。"});
+Object.assign(window.PACKIT_I18N.zh,{"bag":"购物袋","bagsUsed":"袋数","itemsRemaining":"剩余商品","musicVolume":"音乐音量","effectsVolume":"音效音量","newBag":"新袋子","almonteHired":"新工作","almonteIntro":"ALMONTE 雇你做收银员兼装袋员。","almonteJob":"你的任务：","almonteRule":"商品会从收银传送带进入。尽量用最少的袋子装下全部商品。需要时再开新袋子。袋子用太多，顾客会因为要付袋子钱而生气。","almonteLevels":"第 41–60 关 · 每关都是一位新顾客。","almonteStart":"开始在 ALMONTE 工作","almonteFiredText":"你用了太多袋子。顾客生气了，ALMONTE 解雇了你。"});
