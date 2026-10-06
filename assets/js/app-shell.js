@@ -4,7 +4,7 @@ const $=s=>document.querySelector(s);
 const splash=$('#splash'),startHook=$('#startGame'),menuActions=$('#mainMenuActions'),continueBtn=$('#continueGame'),newBtn=$('#newGame'),settingsBtn=$('#settingsBtn'),exitBtn=$('#exitToMenu'),devChapterSkip=$('#devChapterSkip');
 const settingsPanel=$('#settingsPanel'),newConfirm=$('#newGameConfirm'),adBreak=$('#adBreak'),adContinue=$('#adContinue');
 const musicToggle=$('#musicToggle'),effectsToggle=$('#effectsToggle'),languagePicker=$('#languagePicker'),languageCurrent=$('#languageCurrent'),languageOptions=$('#languageOptions'),total=$('#levelTotal');
-const defaults={music:true,effects:true,language:'es'};
+const defaults={music:true,effects:true,language:'es',leftHanded:false};
 const copy=o=>JSON.parse(JSON.stringify(o));
 function read(key,fallback){try{return Object.assign(copy(fallback),JSON.parse(localStorage.getItem(key)||'{}'))}catch(e){return copy(fallback)}}
 function saveProgress(data){localStorage.setItem(KEY,JSON.stringify(data));refreshMenu()}
@@ -39,7 +39,7 @@ settingsPanel.classList.remove('show');
 newConfirm.classList.remove('show');
 adBreak.classList.remove('show');
 total.textContent=levels.length;
-musicToggle.checked=settings.music;effectsToggle.checked=settings.effects;const activeLang=languageOptions.querySelector(`[data-lang="${settings.language}"]`);if(activeLang)languageCurrent.textContent=activeLang.textContent;
+musicToggle.checked=settings.music;effectsToggle.checked=settings.effects;$('#leftHandToggle').checked=!!settings.leftHanded;const activeLang=languageOptions.querySelector(`[data-lang="${settings.language}"]`);if(activeLang)languageCurrent.textContent=activeLang.textContent;
 applyLanguage();refreshMenu();emitAudio();
 startHook.addEventListener('click',()=>{revealMenu();window.dispatchEvent(new CustomEvent('packit:game-resume'))});
 continueBtn.addEventListener('click',()=>begin(progress().current));
@@ -50,6 +50,7 @@ settingsBtn.addEventListener('click',()=>settingsPanel.classList.add('show'));de
 $('#settingsClose').addEventListener('click',()=>settingsPanel.classList.remove('show'));
 musicToggle.addEventListener('change',()=>{settings.music=musicToggle.checked;saveSettings()});
 effectsToggle.addEventListener('change',()=>{settings.effects=effectsToggle.checked;saveSettings()});
+$('#leftHandToggle').addEventListener('change',e=>{settings.leftHanded=e.target.checked;saveSettings()});
 languagePicker.addEventListener('click',()=>languageOptions.classList.toggle('show'));languageOptions.addEventListener('click',e=>{const b=e.target.closest('[data-lang]');if(!b)return;settings.language=b.dataset.lang;languageCurrent.textContent=b.textContent;languageOptions.classList.remove('show');saveSettings();refreshMenu()});
 exitBtn.addEventListener('click',showMenu);
 window.addEventListener('packit:level-complete',()=>{const p=progress(),nextLevel=Math.min(levels.length-1,level+1);saveProgress({current:nextLevel,unlocked:Math.max(p.unlocked,nextLevel),started:true})});
