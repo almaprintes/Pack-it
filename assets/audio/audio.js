@@ -22,6 +22,7 @@ conveyor.addEventListener('ended',()=>{if(!conveyorRunning)return;seekConveyorSt
 document.querySelector('#startGame')?.addEventListener('click',startAudio,{passive:true});
 window.addEventListener('packit:conveyor-start',playConveyor);
 window.addEventListener('packit:item-select',selectionTick);
+window.addEventListener('packit:item-drop',selectionTick);
 window.addEventListener('packit:stamp-hit',stampHit);
 window.addEventListener('packit:item-transform',e=>transformSound(e.detail?.kind));
 window.addEventListener('packit:conveyor-stop',stopConveyor);
