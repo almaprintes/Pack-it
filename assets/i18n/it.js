@@ -20,3 +20,4 @@ brianStart:"INIZIA DA BRIAN AIR"
 ,
 brianFiredText:"Il passeggero è tornato in anticipo e ha trovato tutta la sua vita sparsa per il terminal. Brian Air sostiene di non conoscerti."
 };
+Object.assign(window.PACKIT_I18N.it,{"bag":"Borsa","bagsUsed":"Borse","newBag":"NUOVA BORSA","almonteHired":"NUOVO LAVORO","almonteIntro":"ALMONTE ti assume come cassiere e addetto alle buste.","almonteJob":"Il tuo lavoro:","almonteRule":"I prodotti arrivano sul nastro della cassa. Metti tutta la spesa nel minor numero di buste possibile. Aprine una nuova quando serve. Se ne usi troppe, il cliente si arrabbia perché le paga.","almonteLevels":"Livelli 41–60 · Ogni livello è un nuovo cliente.","almonteStart":"INIZIA DA ALMONTE","almonteFiredText":"Hai usato troppe buste. Il cliente si è arrabbiato e ALMONTE ti ha licenziato."});
