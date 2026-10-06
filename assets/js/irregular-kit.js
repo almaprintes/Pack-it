@@ -50,13 +50,16 @@ levels.splice(0,levels.length,
  {chapter:'brian',rows:5,cols:6,items:['folded','cable','pan','umbrella','mug','sock']},
  {chapter:'brian',rows:5,cols:6,items:['folded','cable','book','dryer','hanger','bottle']},
  {chapter:'brian',rows:5,cols:6,items:['folded','cable','shoe','headphones','sock','bottle']},
- {chapter:'brian',rows:6,cols:8,items:['folded','cable','book','camera','shoe','sock','bottle']},
- {chapter:'brian',rows:6,cols:8,items:['folded','cable','pan','dryer','hanger','headphones','sock','bottle']},
- {chapter:'brian',rows:6,cols:8,items:['folded','cable','book','camera','umbrella','mug','sock','bottle']},
+ // 34–35 · dense cabin-bag puzzles: both preparation states are required
+ {chapter:'brian',rows:5,cols:6,items:['folded','cable','shoe','mug','sock','dryer','hanger']},
+ {chapter:'brian',rows:5,cols:6,items:['folded','cable','sock','hanger','pan','headphones','umbrella']},
+ // 36–37 · advanced geometry: preparing either transformable item opens a valid route
  {chapter:'brian',rows:6,cols:8,items:['folded','cable','shoe','pan','dryer','headphones','sock','bottle','mug']},
  {chapter:'brian',rows:6,cols:8,items:['folded','cable','book','camera','hanger','umbrella','headphones','sock','bottle']},
+ // 38–40 · customs crunch: both shirt and cable must be prepared; density rises 43 → 45 → 47 cells
  {chapter:'brian',rows:6,cols:8,items:['folded','cable','book','shoe','pan','dryer','hanger','sock','bottle','mug']},
- {chapter:'brian',rows:6,cols:8,items:['folded','cable','book','camera','shoe','pan','dryer','hanger','headphones','sock','bottle']}
+ {chapter:'brian',rows:6,cols:8,items:['folded','cable','book','shoe','pan','dryer','hanger','sock','bottle','mug','bottle']},
+ {chapter:'brian',rows:6,cols:8,items:['folded','cable','book','shoe','pan','dryer','hanger','sock','bottle','mug','mug']}
 );
 
 // game.js has already performed its initial load before this extension is evaluated.
