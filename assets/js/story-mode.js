@@ -64,5 +64,5 @@ window.addEventListener('packit:menu-open',()=>{if(active){active=false;clearInt
 $('#storyAccept').addEventListener('click',beginStory);
 $('#storyRestart').addEventListener('click',()=>{abandonRun();fired.classList.remove('show');intro.classList.add('show')});
 $('#brianAccept').addEventListener('click',()=>{brian.classList.remove('show');window.dispatchEvent(new CustomEvent('packit:brian-begin'))});$('#almonteAccept').addEventListener('click',()=>{almonte.classList.remove('show');window.dispatchEvent(new CustomEvent('packit:almonte-begin'))});
-window.PackItStory={showIntro(){intro.classList.add('show')},startClock,stop,limits,pause(){setPaused(true)},resume(){setPaused(false)}};
+window.PackItStory={showIntro(){intro.classList.add('show')},showChapterTransition(chapter){stop();if(chapter==='armazon')intro.classList.add('show');else if(chapter==='brian')brian.classList.add('show');else if(chapter==='almonte')almonte.classList.add('show')},startClock,stop,limits,pause(){setPaused(true)},resume(){setPaused(false)}};
 })();
