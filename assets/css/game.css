@@ -98,3 +98,8 @@ body:not(.brian-chapter) .exit-menu{height:32px;margin:0;padding:0 10px;backgrou
 body:not(.brian-chapter) .story-timer{top:calc(max(8px,env(safe-area-inset-top)) + 56px);left:50%;padding:7px 13px;background:#fff;color:#1f2d34;border:1px solid #ffffffc9;box-shadow:0 5px 16px #101a2238;font-size:13px;z-index:51}
 body:not(.brian-chapter) .story-timer.danger{background:#a92828;color:#fff;border-color:#d95a5a}
 body:not(.brian-chapter) .conveyor{z-index:2}
+
+/* STORY DEV 0.1.13 — readable success banner and guaranteed Brian Air stamp */
+.win{left:50%;width:auto;max-width:calc(100% - 32px);transform:translateX(-50%);padding:10px 18px;box-sizing:border-box;border:1px solid #ffffffb8;border-radius:999px;background:#17242dea;color:#fff;box-shadow:0 8px 24px #101a2252;text-shadow:0 1px 2px #0009;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);white-space:nowrap}
+.brian-chapter .brian-stamp{z-index:80;background:#fffdf0e8;box-shadow:0 4px 14px #40101438;filter:none}
+.brian-chapter .boxwrap.closed .brian-stamp.stamping{display:block;opacity:.92}
