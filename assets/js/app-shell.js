@@ -1,7 +1,7 @@
 (()=>{
 const KEY='packit_save_v1',SETTINGS='packit_settings_v1';
 const $=s=>document.querySelector(s);
-const splash=$('#splash'),startHook=$('#startGame'),menuActions=$('#mainMenuActions'),continueBtn=$('#continueGame'),newBtn=$('#newGame'),settingsBtn=$('#settingsBtn'),exitBtn=$('#exitToMenu'),devChapterSkip=$('#devChapterSkip');
+const splash=$('#splash'),startHook=$('#startGame'),menuActions=$('#mainMenuActions'),continueBtn=$('#continueGame'),newBtn=$('#newGame'),settingsBtn=$('#settingsBtn'),exitBtn=$('#exitToMenu');
 const settingsPanel=$('#settingsPanel'),newConfirm=$('#newGameConfirm'),adBreak=$('#adBreak'),adContinue=$('#adContinue');
 const musicToggle=$('#musicToggle'),effectsToggle=$('#effectsToggle'),musicVolume=$('#musicVolume'),effectsVolume=$('#effectsVolume'),languagePicker=$('#languagePicker'),languageCurrent=$('#languageCurrent'),languageOptions=$('#languageOptions'),total=$('#levelTotal');
 const defaults={music:true,effects:true,musicVolume:60,effectsVolume:100,language:'es',leftHanded:false};
@@ -46,7 +46,7 @@ continueBtn.addEventListener('click',()=>begin(progress().current));
 newBtn.addEventListener('click',()=>{progress().started?newConfirm.classList.add('show'):window.PackItStory.showIntro()});
 $('#confirmNewGame').addEventListener('click',()=>{localStorage.removeItem(KEY);newConfirm.classList.remove('show');window.PackItStory.showIntro()});
 $('#cancelNewGame').addEventListener('click',()=>newConfirm.classList.remove('show'));
-settingsBtn.addEventListener('click',()=>settingsPanel.classList.add('show'));devChapterSkip?.addEventListener('click',()=>{splash.classList.add('hide');window.dispatchEvent(new CustomEvent('packit:chapter-complete',{detail:{chapter:'armazon',nextLevel:20,devSkip:true}}))});
+settingsBtn.addEventListener('click',()=>settingsPanel.classList.add('show'));const devMenu=$('#devChapterMenu'),devBox=$('.splash-box');let devTaps=0,devTapTimer=0;devBox?.addEventListener('click',()=>{clearTimeout(devTapTimer);devTaps++;if(devTaps>=5){devTaps=0;devMenu.classList.add('show')}else devTapTimer=setTimeout(()=>devTaps=0,1200)});$('#devChapterClose')?.addEventListener('click',()=>devMenu.classList.remove('show'));devMenu?.addEventListener('click',e=>{const b=e.target.closest('[data-dev-level]');if(!b)return;const target=Number(b.dataset.devLevel);devMenu.classList.remove('show');splash.classList.add('hide');begin(target)});
 $('#settingsClose').addEventListener('click',()=>settingsPanel.classList.remove('show'));
 musicToggle.addEventListener('change',()=>{settings.music=musicToggle.checked;saveSettings()});
 effectsToggle.addEventListener('change',()=>{settings.effects=effectsToggle.checked;saveSettings()});musicVolume.addEventListener('input',()=>{settings.musicVolume=Number(musicVolume.value);$('#musicVolumeValue').textContent=musicVolume.value+'%';saveSettings()});effectsVolume.addEventListener('input',()=>{settings.effectsVolume=Number(effectsVolume.value);$('#effectsVolumeValue').textContent=effectsVolume.value+'%';saveSettings()});
