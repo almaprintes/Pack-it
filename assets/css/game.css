@@ -65,8 +65,8 @@ html,body{overscroll-behavior:none}body{margin:0;font-family:system-ui;backgroun
 .brian-chapter .box:after{content:"BRIAN AIR · INSPECTED";position:absolute;right:-7px;bottom:-25px;padding:3px 6px;border-radius:4px;background:#f4f6f7;color:#243139;border:1px solid #87959b;font-size:7px;font-weight:1000;letter-spacing:.5px;transform:rotate(-3deg);pointer-events:none}
 .brian-card{background:#f8fafb}.brian-logo{width:min(260px,88%);border-radius:10px}
 
-/* DEV-only chapter navigation. Delete this rule together with #devChapterSkip before production. */
-.dev-chapter-skip{border:1.5px dashed #9d3f3270;border-radius:999px;padding:11px 18px;background:#9d3f3210;color:#8a342a;font-size:11px;font-weight:1000;letter-spacing:.7px;width:100%;margin-top:2px}
+/* Hidden DEV-only chapter navigation: unlock with five rapid taps on the home box. */
+.dev-chapter-menu .menu-panel{gap:10px}.dev-chapter-menu h2{font-size:17px;letter-spacing:.8px}.splash-box{user-select:none;-webkit-user-select:none}
 
 /* Brian Air HUD: keep controls readable over the illustrated airport. */
 .brian-chapter header{position:absolute;top:max(8px,env(safe-area-inset-top));left:10px;right:10px;height:48px;padding:0 10px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:8px;border:1px solid #ffffff8f;border-radius:16px;background:#17242dde;color:#fff;font-size:14px;box-shadow:0 7px 20px #101a2240;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:50}
