@@ -41,7 +41,7 @@ adBreak.classList.remove('show');
 total.textContent=levels.length;
 musicToggle.checked=settings.music;effectsToggle.checked=settings.effects;musicVolume.value=settings.musicVolume??60;effectsVolume.value=settings.effectsVolume??100;$('#musicVolumeValue').textContent=musicVolume.value+'%';$('#effectsVolumeValue').textContent=effectsVolume.value+'%';$('#leftHandToggle').checked=!!settings.leftHanded;const activeLang=languageOptions.querySelector(`[data-lang="${settings.language}"]`);if(activeLang)languageCurrent.textContent=activeLang.textContent;
 applyLanguage();refreshMenu();emitAudio();
-startHook.addEventListener('click',()=>{revealMenu();window.dispatchEvent(new CustomEvent('packit:game-resume'))});
+startHook.addEventListener('click',()=>{revealMenu();requestAnimationFrame(()=>{if(startHook.classList.contains('menu-gone')&&menuActions.classList.contains('menu-actions-hidden'))menuActions.classList.remove('menu-actions-hidden')});window.dispatchEvent(new CustomEvent('packit:game-resume'))});
 continueBtn.addEventListener('click',()=>begin(progress().current));
 newBtn.addEventListener('click',()=>{progress().started?newConfirm.classList.add('show'):window.PackItStory.showIntro()});
 $('#confirmNewGame').addEventListener('click',()=>{localStorage.removeItem(KEY);newConfirm.classList.remove('show');window.PackItStory.showIntro()});
