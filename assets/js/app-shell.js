@@ -59,5 +59,5 @@ $('#next').addEventListener('pointerdown',e=>{
  if(![4,9,14,24,29,34].includes(level)||!$('#next').classList.contains('show'))return;
  e.preventDefault();e.stopImmediatePropagation();nextBusy=true;$('#next').classList.remove('show');$('#win').classList.remove('show');boxwrap.classList.remove('shaking');adBreak.classList.add('show');window.dispatchEvent(new Event('packit:menu-open'));
 },{capture:true});
-adContinue.addEventListener('click',nextAfterBreak);window.addEventListener('packit:story-begin',()=>begin(0,true));window.addEventListener('packit:brian-begin',()=>begin(20,false));
+adContinue.addEventListener('click',nextAfterBreak);window.addEventListener('packit:story-begin',()=>begin(0,true));window.addEventListener('packit:brian-begin',()=>begin(20,false));window.addEventListener('packit:almonte-begin',()=>begin(40,false));
 })();
