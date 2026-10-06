@@ -1,2 +1,2 @@
-window.PACKIT_BUILD='story0121';
-window.PACKIT_VERSION='STORY DEV 0.1.21';
+window.PACKIT_BUILD='story0122';
+window.PACKIT_VERSION='STORY DEV 0.1.22';
